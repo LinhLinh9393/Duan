@@ -1,0 +1,26 @@
+<h1>Quản lý đơn hàng</h1>
+<table class="table border mt-3 " style="height: 70vh; ">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>ID đơn hàng</th>
+      <th>Tên người mua</th>
+      <th>Trạng thái</th>
+      <th>Ngày đặt</th>
+      <th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="(index, value) in listDH">
+        <th scope="row">{{index +1}}</th>
+        <td>{{  value.id}}</td>
+        <td>{{value.userInfo.username}}</td>
+        <td>{{value.trangThai}}</td>
+        <td>{{ value.ngayDatHang | date:'dd/MM/yyyy HH:mm' }}</td>
+        <th>
+          <a href="#!/chitietDH/{{ value.id }}"><button class="btn btn-warning ">Xem chi tiết</button></a>
+          <a href="#!/updateDonhang/{{ value.id }}"><button class="btn btn-danger  ">Sửa</button></a>
+        </th>
+    </tr>
+  </tbody>
+</table>

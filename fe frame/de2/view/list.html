@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1 class="text-center">Danh sách</h1>
+   <a href="#!/add"><button class="btn btn-primary">Thêm</button></a>
+   <table class="table mt-5 ">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Name</th>
+                <th>Pass</th>
+                <th>Email</th>
+                <th>Thể loại</th>
+                <th>Phone</th>
+                <th>Ngày đăng</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(index, value) in list">
+                <td>{{index+1}}</td>
+                <td>{{value.name}}</td>
+                <td>{{value.pass}}</td>
+                <td>{{value.email}}</td>
+                <td>{{value.theLoai}}</td>
+                <td>{{value.phone}}</td>
+                <td>{{value.date}}</td>
+                <td>
+                    <a href="#!/chiTiet/post/{{value.id}}"><button class="btn btn-primary">Chi tiết</button></a>
+                    <a href="#!/edit/post/{{value.id}}"><button class="btn btn-danger">Sửa</button></a>
+                    <a href="#!/delete/post/{{value.id}}"><button class="btn btn-warning">Xoá</button></a>
+                
+                </td>
+            </tr>
+        </tbody>
+   </table>
+</body>
+</html>

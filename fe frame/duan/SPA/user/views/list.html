@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card text-bg-dark">
+            <img src="../img/banner (1).jpg" class="card-img" alt="..." style="height: 450px;">
+            <div class="card-img-overlay text-center mt-5  " style="font-size: 25px;">
+                <h3 class="card-title">Nước hoa</h3>
+                <p class="card-text">Nước hoa chính hãng; hương thơm sang trong, quyến rũ mang lại cho khách
+                    hàng sản phẩm hài lòng nhất.</p>
+                <p class="card-text"><small>Hãy mau xem các loại nước hoa với nhiều mùi hương khác nhau.</small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-2 p-2 ">
+    <div class="col-3">
+        <ul class="list-group">
+            <li class="list-group-item active"><i class="fa-solid fa-bars"></i> Danh mục</li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(index, value) in listDM">
+                <a href="" ng-click="loadDM(value.id)"><span>{{ value.name }}</span></a>
+            </li>
+        </ul>
+        <hr>
+        <div class="col-12">
+            <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+            <div class="input-group" >
+                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Search"  ng-model="name">
+                <div class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+        </div>
+        <hr>
+        <ul class="list-group">
+            <li class="list-group-item active"><i class="fa-solid fa-bars"></i> Sản phẩm</li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="(index, value) in listSP">
+                <img src="{{ value.image }}" alt="" width="25%" style="text-align: end;"> <a href="#!/chitietsp/{{ value.id }}"><span>{{ value. name }}</span></a>
+            </li>
+        </ul>
+        <hr>
+        
+    </div>
+    <div class="col-9 ">
+        <div class="row">
+            <div class="col-9">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
+                    </ol>
+                  </nav>
+            </div>
+            <!-- <div class="col-3 justify-content-end">
+                <select class="form-select justify-content-end" ng-model="data.iddm">
+                    <option value=""hidden>Tất cả</option>
+                    <option value="{{ value.id }}" ng-repeat="(index, value) in listDM " ><a href="" ng-click="loadDM(value.id)"><span >{{ value.name }}</span></a></option>
+                </select>
+            </div> -->
+        </div>
+        <div class="row me-4 ms-3 ">
+            <div class="col-xl-4  p-3 col-sm-6 "  ng-repeat="(index, value) in listSP | filter:{ name: name}">
+                <div class="card">
+                  <img src="{{ value.image }}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <div class="text d-flex ">
+                      <h5 class="card-title"><span>{{ value.name }}</span></h5>
+                    </div>
+                    <p class="card-text"><span>{{ value.mota }}</span></p>
+                    <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;"><span>{{ value.price | currency: '':0 }} vnđ</span></p>
+                    <a href="#!/chitietsp/{{ value.id }}"><button class="btn btn-primary container-fluid" >Mua ngay</button></a>
+
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <nav aria-label="Page navigation example ">
+            <ul class="pagination  justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+

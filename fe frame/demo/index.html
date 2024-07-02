@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lid/all.min.css">
+    <link rel="stylesheet" href="lid/bootstrap.min.css">
+</head>
+
+<body ng-app="myApp">
+    <div ng-view></div>
+    <script src="lid/all.min.js"></script>
+    <script src="lid/angular.min.js"></script>
+    <script src="lid/angular-route.min.js"></script>
+    <script src="lid/bootstrap.bundle.min.js"></script>
+
+    <!-- controller -->
+    <script src="controller/ListController.js"></script>
+    <script src="controller/AddController.js"></script>
+    <script src="controller/DetailController.js"></script>
+    <script src="controller/UpdateController.js"></script>
+    <script src="controller/DeleteController.js"></script>
+    <script>
+        var app = angular.module("myApp",['ngRoute'])
+        app.config(function($routeProvider){
+            $routeProvider
+            .when('/list-user',{
+                templateUrl: "view/list.html",
+                controller: ListController
+            })
+            .when('/user/add',{
+                templateUrl: "view/add.html",
+                controller: AddController
+            })
+            .when('/detail/user/:id',{
+                templateUrl: "view/detail.html",
+                controller: DetailController
+            })
+            .when('/delete/user/:id',{
+                templateUrl: "view/delete.html",
+                controller: DeleteController
+            })
+            .when('/update/user/:id',{
+                templateUrl: "view/update.html",
+                controller: UpdateController
+            })
+            .otherwise({
+                redirectTo: '/list-user'
+            })
+        })
+    </script>
+
+</body>
+
+</html>

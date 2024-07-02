@@ -1,0 +1,46 @@
+<h3 class="m-3">Cập nhật đơn hàng</h3>
+<form>
+     <div class="mb-2 mt-3">
+          <label for="id" class="form-label">ID:</label>
+          <input type="id" class="form-control" id="id" name="id" value="OD001" disabled>
+     </div>
+     <div class="mb-2">
+          <label for="img" class="form-label">Mã vận đơn:</label>
+          <input type="text" class="form-control" id="img" name="img" value="001012345" disabled>
+     </div>
+     <div class="mb-2">
+          <label for="name" class="form-label">Số lượng sản phẩm:</label>
+          <input type="text" class="form-control" id="name" name="name" value="2" disabled>
+     </div>
+     <div class="mb-2">
+          <label for="price" class="form-label">Thành tiền:</label>
+          <input type="text" class="form-control" id="price" name="price" value="10000" disabled>
+     </div>
+     <div class="mb-2">
+          <label for="date" class="form-label">Ngày đặt hàng:</label>
+          <input type="text" class="form-control" id="date" name="date" value="2024/03/20" disabled>
+     </div>
+     <div class="mb-2">
+          <label for="des" class="form-label">Ghi chú đơn hàng:</label>
+          <textarea class="form-control" id="des " disabled rows="3">áDFGHJKL</textarea>
+     </div>
+     <div class="mb-2">
+          <label for="pwd" class="form-label">Trạng thái:</label>
+          <select class="form-select">
+               <option value="">Chờ xác nhận</option>
+               <option>Đang vận chuyển</option>
+               <option>Đã giao</option>
+          </select>
+
+     </div>
+     <div class="d-flex justify-content-center">
+
+          <a type="button" href="../Order/list-order.html" class="btn btn-secondary mx-2"><i
+                    class="fa-solid fa-arrow-left"></i> Quay lại</a>
+
+          <a type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> Chỉnh
+               sửa</a>
+          <a class="btn btn-danger mx-2" type="button"> <i class="fa-solid fa-trash"></i>
+               Xóa</a>
+     </div>
+</form>

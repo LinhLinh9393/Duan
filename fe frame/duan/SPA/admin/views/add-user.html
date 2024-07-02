@@ -1,0 +1,35 @@
+<h1 class="text-danger text-center">Thêm mới User</h1>
+<div class="form p-5 mt-2">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Tên user</label>
+        <input type="text" class="form-control" ng-model="data.username">
+        <span class="text-danger" ng-show="validate.username">Tên không được để trống</span>
+    </div> 
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" required  ng-model="data.email" >
+        <span class="text-danger" ng-show="validate.email">Email không được để trống và phải chứa "@"</span>
+
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Pass</label>
+        <input type="text" class="form-control" ng-model="data.password">
+        <span class="text-danger" ng-show="validate.password">Pass không được để trống</span>
+
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Vai trò</label>
+        <select class="form-select justify-content-end" ng-model="data.role">
+            <option value=""hidden>Tất cả</option>
+            <option value="1" >1</option>
+            <option value="2" >2</option>
+        </select>
+        <span class="text-danger" ng-show="validate.role">Danh mục không được để trống</span>
+
+    </div>
+    <div class="mb-3">
+       <button class="btn btn-primary " ng-click="submit()">Thêm mới</button> 
+       <button class="btn btn-danger text-light " ng-click="huy()">Huỷ</button>
+
+    </div>
+</div>

@@ -1,0 +1,101 @@
+.login{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    margin: 100px auto;
+    margin-top: 40px;
+}
+
+.login__background{
+    text-align: center;
+    padding-top: 75px;
+}
+
+.login__background h3{
+    font-size: 25px;
+    padding: 10px 0 50px 0;
+    font-weight: 900;
+}
+
+.login__background p{
+    padding: 5px 0;
+    font-size: 20px;
+}
+
+.login__form{
+    background-color: #A28989;
+    padding: 50px 50px;
+    border-radius: 10px;
+}
+
+.login__form h3{
+    font-size: 25px;
+    color: white;
+    padding: 0 0 30px 0;
+}
+
+.login__form input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: none;
+    padding: 0 10px;
+}
+
+.btn__login{
+    width: 100%;
+    height: 50px;
+    border: 2px solid black;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.login__action{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.login__other{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.login__other::after{
+    content: "";
+    width: 47%;
+    height: 3px;
+    display: inline-block;
+    background-color: black;
+}
+
+.login__other::before{
+    content: "";
+    width: 47%;
+    height: 3px;
+    display: inline-block;
+    background-color: black;
+}
+
+.login__facebook{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login__facebook button{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 30px;
+}
+
+.signin{
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,9 @@
+window.detail= function($scope, $http,$routeParams){
+    var api="http://localhost:3000/post/"
+
+    $scope.list=[]
+    $http.get(api+$routeParams.id)
+        .then(function(response){
+            $scope.list=response.data
+        })
+}

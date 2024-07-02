@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <ul>
+            <li ng-repeat="(index,value) in listAnimals">
+                {{index}} - {{value}}
+            </li><br>
+            <li ng-repeat="value in listAnimals">
+                {{value}}
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        var aa=angular.module("myApp", [])
+        aa.controller("myController", function($scope){
+            $scope.listAnimals = [
+                "dog","cat","Bird","Fish"
+            ]
+        })
+    </script>
+</body>
+</html>

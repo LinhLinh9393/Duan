@@ -1,0 +1,48 @@
+<h3 class="m-3">Danh sách đơn hàng</h3>
+
+<table class="table table-bordered ">
+     <thead>
+          <tr>
+               <th>ID</th>
+               <th>Mã vận đơn</th>
+               <th>Tổng sản phẩm</th>
+               <th>Thành tiền</th>
+               <th>Ngày đặt hàng</th>
+               <th>Trạng thái</th>
+               <th>Tương tác</th>
+          </tr>
+     </thead>
+     <tbody>
+          <tr ng-repeat="item in donHang">
+               <td>{{ item.id }}</td>
+               <td>{{item.maVanDon }}</td>
+               <td>{{ item.soLuongSanPham  }}</td>
+               <td> {{ item.tongTien }}</td>
+               <td>{{ item.ngayDatHang }}</td>
+               <td><span ng-model="item.trangThai">{{ item.trangThai }}</span>
+               </td>
+               <td style="width: 1px;" class="text-nowrap">
+                    <div class="d-grid gap-2 d-md-block">
+                         <a class="btn btn-primary sm" href="#!detail-order/{{ item.id }}" type="button"> <i
+                                   class="fa-solid fa-eye"></i>
+                              Xem</a>
+                         <a class="btn btn-warning sm" href="#!edit-order/{{item.id}}" type="button"><i
+                                   class="fa-solid fa-pen-to-square"></i> Sửa</a>
+                         <a class="btn btn-danger sm" type="button" data-bs-toggle="modal" data-bs-target="#myModal"> <i
+                                   class="fa-solid fa-trash"></i>
+                              Xóa</a>
+                    </div>
+               </td>
+          </tr>       
+      
+     </tbody>
+</table>
+<!-- <div class="d-flex justify-content-center ">
+     <ul class="pagination ">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+     </ul>
+</div> -->

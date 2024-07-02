@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="./lib/bootstrap.min.css">\
+     <script src="./lib/bootstrap.bundle.min.js"></script>
+     <script src="./lib/angular.min.js"></script>
+     <script>
+           var myApp = angular.module('myApp', []);
+          myApp.controller('bindingCtrl', function($scope){
+               console.log("Khởi tạo ctrl thành công");
+               // Khai báo biến
+               $scope.malop = "WEB207";
+               $scope.soluong = 39;
+               $scope.danhsach =['PH001','PH002', 'PH003'];
+          });
+     </script>
+</head>
+<body ng-app="myApp">
+     <div ng-controller="bindingCtrl">
+          <h6>Giới thiệu binding</h6>
+          <p>Ngoài các kiểu khai báo biến của javascript đã học (var, let, const)</p>
+          <p>Thì Angularjs còn có $scope</p>
+          <h6>Hiện thị biến string ra màn hình</h6>
+          <p>Mã lớp: {{ malop }}</p>
+          <p>Số lượng: {{ soluong }}</p>
+          <h6>Hiển thị mảng ra màn hình</h6>
+          <ul>
+               <li ng-repeat="item in danhsach">{{ item }}</li>
+          </ul>
+     </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<nav class="container mt-3" aria-label="breadcrumb">
+     <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+          <li class="breadcrumb-item active" aria-current="page">Chi tiết sản phẩm</li>
+     </ol>
+</nav>
+<div class="container">
+     <div class="border-0 border-bottom my-3">
+          <h1 class="h6">{{ product.ten }}</h1>
+     </div>
+     <div class="row mx-5 mb-5">
+          <div class="col-4 me-5">
+               <div
+                    class="border rounded bg-light d-flex justify-content-center overflow-hidden align-items-center product_detail_xl">
+                    <img ng-src="{{ product.anh }}" alt="" class="mh-100 mw-100">
+               </div>
+          </div>
+          <div class="col-7">
+               <div>
+                    <h2 class="h4">{{ product.ten }}</h2>
+                    <h4>{{ product.giaBan}}</h4>
+               </div>
+               <div class="d-flex">
+                    <div>
+                         <i class="fa-solid fa-star"></i>
+                         <i class="fa-solid fa-star"></i>
+                         <i class="fa-solid fa-star"></i>
+                         <i class="fa-solid fa-star"></i>
+                         <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="mx-2">
+                         <p>| 10 lượt đánh giá</p>
+                    </div>
+               </div>
+               <div>
+                    <p>{{ product.moTa }}
+                    </p>
+               </div>
+               <div>
+                    <a type="submit" ng-click="addToCart(product)" class="btn btn-success">Thêm vào giỏ hàng</a>
+                    <a type="submit" href="./checkout.html" class="btn btn-danger">Mua ngay</a>
+                    <a type="submit" href="" class="btn btn-light "><i class="fa-regular fa-heart"></i></a>
+               </div>
+          </div>
+
+     </div>
+</div>

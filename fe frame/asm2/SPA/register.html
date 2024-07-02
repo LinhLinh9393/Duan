@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/all.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <style>
+        .navbar {
+            background-color: rgb(119, 110, 239);
+            color: white;
+        }
+
+        /* .col-2{
+                background-color: rgb(241, 117, 117);
+                height: 100vh;
+                
+            } */
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <div class="contaner" ng-controller="myController">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid ms-3 ">
+                <img src="../img/logo.png" alt="" srcset="" width="80px">
+                <a class="navbar-brand text-light ms-3" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="list.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Danh mục
+                            </a>
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="list.html">Chanel</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="list.html">Dior</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="list.html">Perfume</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="list.html">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="admin.html">Admin</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                    </form>
+                    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw "></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row mt-4 ">
+            <div class="col-6 ms-4 ">
+                <form action="">
+                    <h2 class="text text-center ">Đăng ký</h2>
+                    <div class="row p-4 ">
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" ng-model="data.username">
+                            <span ng-show="validate.username">Tên không được để trống</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput2" class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" required ng-model="data.email">
+                            <span ng-show="validate.email">Email không được để trống</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Mật khẩu</label>
+                            <input type="text" class="form-control" ng-model="data.password">
+                            <span ng-show="validate.password">Pass không được để trống</span>
+                        </div>
+                        <div class="mb-3 ">
+                            <div class="col-6 border p-2 m-auto  ">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                    <label class="form-check-label" for="gridCheck1">
+                                        Tôi không phải người máy
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-dark m-auto " style="display: list-item;" ng-click="register()">Đăng ký</button>
+                    <p class="text-center  mt-3 ">Bạn đã có tài khoản?<a href="login.html">Đăng nhập ngay</a></p>
+                </form>
+            </div>
+            <div class="col-5 m-auto  ">
+                <div class="right p-3 text-center ">
+                    <h2>Hoặc đăng nhập bằng</h2>
+                    <div class="container text-center mb-4">
+                        <div class="row justify-content-center ">
+                            <div class="col-3">
+                                <a href="" style="font-size: 30px;"><i class="fa-brands fa-square-facebook"></i></a>
+                            </div>
+                            <div class="col-3">
+                                <a href="" style="font-size: 30px;"><i class="fa-brands fa-google"></i></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Các đặc quyền khi đăng ký tài khoản</p>
+                    <p> Nhận quyền truy cập độc quyền vào các giao dịch và sự kiện.<br>
+                        Lưu các mục yêu thích vào danh sách yêu thích của bạn.<br>
+                        Lưu các đơn đặt hàng và số theo dõi đơn hàng của bạn.
+                    </p>
+                    <p>Dịch vụ khách hàng</p>
+                    <p>Bạn cần giúp đỡ? Xin hãy gọi điện đến Hotline: 093*******</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4 mb-3">
+            <div class="col-7 ms-3  ">
+                <p>Đăng ký để nhận ưu đãi: </p>
+            </div>
+            
+            <div class="col-3">
+                <div class="d-flex flex-row-reverse">
+                    <div class="p-2"><i class="fa-brands fa-twitter"></i></div>
+                    <div class="p-2"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="p-2"><i class="fa-brands fa-facebook"></i></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row  text-light " style=" background-color: rgb(119, 110, 239); ">
+            <div class="col-xl-12 text-black p-2 d-flex ">
+                <div class="col-5 ms-3">
+                    <div class="d-flex justify-content-start mt-2 text-light  ">
+                        <h4>Thế giới nước hoa</h4>
+                    </div>
+                </div>
+                <div class="col-6 ">
+                    <div class="d-flex flex-row-reverse text-light ">
+                        <div class="p-2"><i class="fa-brands fa-twitter"></i></div>
+                        <div class="p-2"><i class="fa-brands fa-youtube"></i></div>
+                        <div class="p-2"><i class="fa-brands fa-facebook"></i></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="container d-flex justify-content-between px-5 py-4 border-1 border-top border-black  ">
+                    <div>
+                        <h3 class="fw-bold">Địa chỉ.</h3>
+                        <p>400 University Drive Suite 200 Coral Gables,<br>
+                            FL 33134 USA</p>
+                    </div>
+                    <div class="footer">
+                        <ul class="nav flex-column text-center">
+                            <h4>Links</h4>
+                            <li class="nav-item">
+                                <a class="nav-link active  text-light " aria-current="page" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-light " href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-light " href="#">Link</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer">
+                        <ul class="nav flex-column text-center">
+                            <h4>Help</h4>
+                            <li class="nav-item">
+                                <a class="nav-link active  text-light " aria-current="page" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-light " href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer">
+                        <h4>Newsletter</h4>
+                        <div class="formft">
+                            <input type="email" class="border-0 border-bottom border-black" id="emailft"
+                                placeholder="name@example.com">
+                            <input type="submit" class="border-0 border-bottom border-black" id="btnEmail">
+                        </div>
+                    </div>
+                </div>
+                <div class=" border-top border-black m-3">
+                    <p class="py-3 px-2">2023 furino. All rights reverved</p>
+                </div>
+            </div>
+            <div class="row mt-3 ">
+                <div class="col-xl-4 ms-2 ">
+                    <!-- <div class="alert alert-success bg-light ms-4" role="alert"> -->
+                    <!-- <h4 class="alert-heading">Well done!</h4>
+            <p>Nước hoa chính hãng đem đến sự mới lạ dành cho khách hàng với nhiều mùi hương tinh tế, sang trọng .</p>
+            <hr>
+            <p class="mb-0">Hãy nhanh tay đến mua hàng của chúng tôi.</p>
+          </div> -->
+                    <h2>Nước hoa chính hãng</h2>
+                    <img src="../img/tải xuống (1).jpg" alt="">
+                </div>
+                <div class="col-xl-3">
+                    <div class="link_footer">
+                        <div class="item_link_footer">
+                            <h4 class="tt_footer text-uppercase text-light ">Hỗ trợ khách hàng</h4>
+                        </div>
+                        <div class="item_link_footer">
+                            <div class="txt_color_2 text-light">Hotline: <strong>1800 6324</strong></div>
+                            <p class="text text-light ">(miễn phí , 08-22h kể cả T7, CN)</p>
+                        </div>
+                        <div class="item_link_footer"><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Các câu hỏi thường gặp</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Gửi yêu cầu hỗ trợ</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Hướng dẫn đặt hàng</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Phương thức vận chuyển</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Chính sách đổi trả</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4  justify-content-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d502871.69171304646!2d105.37460247632978!3d10.042823600000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a062a7f9885625%3A0xec4ad2e7686bfb0b!2zVGjhur8gR2nhu5tpIE7GsOG7m2MgSG9hIC0gTmd1eeG7hW4gVHLDo2k!5e0!3m2!1svi!2s!4v1710817613777!5m2!1svi!2s"
+                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/all.min.js"></script>
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        var myApp=angular.module("myApp", [])
+        myApp.controller("myController", function($scope,$http){
+            var api="http://localhost:3000/user/"
+            $scope.data={
+                username: "",
+                email: "",
+                password: "",
+                role: 2
+            }
+
+            $scope.register=function(){
+                if( checkEmpty()){
+                    $http.post(api, $scope.data)
+                        .then(function(response){
+                            // alert("Đăng ký thành công")
+                            window.location.href = "login.html"
+                            alert("Đăng ký thành công")
+                        })
+                        .catch(function(error){
+                            console.log("Lỗi API");
+                        })
+                }
+                
+            }
+
+            $scope.validate = {
+                username: false,
+                email: false,
+                password: false
+            }
+            function checkEmpty(){
+                $scope.validate.username = $scope.data.username == "" ? true : false;
+                $scope.validate.email=$scope.data.email == "" ? true :false;
+                $scope.validate.password=$scope.data.password == "" ? true :false;
+
+                if(!$scope.validate.username && !$scope.validate.email && !$scope.validate.password){
+                    return true
+                }else {
+                    return false
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

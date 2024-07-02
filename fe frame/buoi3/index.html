@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../lib/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../lib/all.min.css">
+    <style>
+        .row{
+            --bs-gutter-x: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contaner">
+        <div class="row">
+            <div class="col-3 position-fixed bg-info" style="height: 100vh;">
+                <ul class="list-group mt-4" style="width: 304px;">
+                    <li class="list-group-item active">Quản lí người dùng</li>
+                    <li class="list-group-item">Quản lý sản phẩm</li>
+                    <li class="list-group-item">Báo cáo</li>
+                    <li class="list-group-item">Thống kê</li>
+                </ul>
+            </div>
+            <div class="col-9 p-0 offset-3  ">
+                <div class="text bg-primary p-2 ">
+                    <h5 class="text text-light ">Quản lý người dùng</h5>    
+                </div> 
+                <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-9">
+                            <div class="form mt-3 ms-3">
+                                <!-- <label for="">Tên sản phẩm</label>
+                                <input type="text " ><br><br> -->
+                                <div class="mb-3 row">
+                                    <label for="" class="col-sm-3">Tên sản phẩm</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control">
+                                    </div>
+                                  </div>
+                                  <div class="mb-3 row">
+                                    <label for="" class="col-sm-3">Giá sản phẩm</label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control">
+                                    </div>
+                                  </div>
+                                  <div class="mb-3 row">
+                                    <label for="" class="col-sm-3">Mô tả</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                  </div>
+                                <input type="button" value="Thêm mới" class="btn btn-primary ">
+            
+                            </div>
+                        </div>
+                </div>
+                <table class="table border mt-3 ">
+                    <thead>
+                      <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Giá sản phẩm</th>
+                        <th scope="col">Mô tả</th>
+                        <th>Hành động</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Nokia 520</td>
+                        <td>150000$</td>
+                        <td>Điện thoại tốt nhất mọi thời đại</td>
+                        <th>
+                            <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Chi tiết</button>
+                            <button class="btn btn-warning  " data-bs-toggle="modal" data-bs-target="#examplesModal">Sửa</button>
+                            <button class="btn btn-danger  " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Xoá</button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Nokia 520</td>
+                        <td>150000$</td>
+                        <td>Điện thoại tốt nhất mọi thời đại</td>
+                        <th>
+                            <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Chi tiết</button>
+                            <button class="btn btn-warning  " data-bs-toggle="modal" data-bs-target="#examplesModal">Sửa</button>
+                            <button class="btn btn-danger  " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Xoá</button>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Nokia 520</td>
+                        <td>150000$</td>
+                        <td>Điện thoại tốt nhất mọi thời đại</td>
+                        <th>
+                            <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">Chi tiết</button>
+                            <button class="btn btn-warning  " data-bs-toggle="modal" data-bs-target="#examplesModal">Sửa</button>
+                            <button class="btn btn-danger "  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Xoá</button>
+                        </th>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Chỉnh sửa sản phẩm</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-10">
+                    <div class="row">
+                      <label for="" class="col-4">Tên sản phẩm</label>
+                      <div class="col-8"><input type="text" class="form-control" placeholder="Nokia 520"></div>
+                    </div><br>
+                    <div class="row">
+                      <label for="" class="col-4">Giá sản phẩm</label>
+                      <div class="col-8"><input type="text" class="form-control" placeholder="150000$"></div>
+                    </div><br>
+                    <div class="row">
+                      <label for="" class="col-4">Mô tả</label>
+                      <div class="col-8"><textarea class="form-control" rows="2" placeholder="Điện thoại tốt nhất mọi thời đại"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal fade" id="examplesModal" tabindex="-1" aria-labelledby="examplesModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="examplesModalLabel">Chỉnh sửa sản phẩm</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-2"></div>
+                  <div class="col-10">
+                    <div class="row">
+                      <label for="" class="col-4">Tên sản phẩm</label>
+                      <div class="col-8"><input type="text" class="form-control" placeholder="Nokia 520"></div>
+                    </div><br>
+                    <div class="row">
+                      <label for="" class="col-4">Giá sản phẩm</label>
+                      <div class="col-8"><input type="text" class="form-control" placeholder="150000$"></div>
+                    </div><br>
+                    <div class="row">
+                      <label for="" class="col-4">Mô tả</label>
+                      <div class="col-8"><textarea class="form-control" rows="2" placeholder="Điện thoại tốt nhất mọi thời đại"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success " data-bs-dismiss="modal">Sửa</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">
+              Thông báo
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Bạn có muốn xoá không?</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Xác nhận xoá
+            </button>
+            <button type="button" class="btn btn-primary">Đóng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="row">
+            <div class="col-9 bg-warning p-2 offset-3">@footer</div>
+        </div>
+    </div>
+
+
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+    <script src="../lib/all.min.js"></script>
+</body>
+</html>

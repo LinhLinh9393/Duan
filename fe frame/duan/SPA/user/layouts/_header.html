@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../lib/all.min.css">
+  <link rel="stylesheet" href="../lib/bootstrap.min.css">
+  <style>
+    .navbar {
+      background-color: rgb(119, 110, 239);
+      color: white;
+    }
+
+    /* .col-2{
+                background-color: rgb(241, 117, 117);
+                height: 100vh;
+                
+            } */
+  </style>
+</head>
+
+<body>
+  <div class="contaner">
+    <nav class="navbar navbar-expand-lg "  ng-controller="header">
+      <div class="container-fluid ms-3 ">
+          <img src="../img/logo.png" alt="" srcset="" width="80px">
+          <a class="navbar-brand text-light ms-3 " href="#!/home">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <!-- <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-light" href="#!/list-product" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          Danh mục
+                      </a>
+                      <ul class="dropdown-menu ">
+                          <li><a class="dropdown-item" href="#!/list-product">Chanel</a></li>
+                          <li>
+                              <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" href="#!/list-product">Dior</a></li>
+                          <li>
+                              <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item" href="#!/list-product">Perfume</a></li>
+                      </ul>
+                  </li> -->
+                  <li class="nav-item">
+                      <a class="nav-link active text-light" aria-current="page" href="#!/list-product">Sản phẩm</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="#!/giohang">Giỏ hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="#!/lichsu">Lịch sử mua hàng</a>
+                </li>
+                    <!-- <button ng-click="logout()">Đăng xuất</button>                      -->
+              </ul>
+              <!-- <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  ng-model="name">
+
+              </form> -->
+              <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw "></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#!/login">Login</a></li>
+                          <li>
+                              <hr class="dropdown-divider" />
+                          </li>
+                          <li><a class="dropdown-item" href="#!/register">Logout</a></li>
+                      </ul>
+                      
+                  </li>
+              </ul>
+              <button class="btn btn-light" ng-click="logout()">Đăng xuất</button>
+          </div>
+      </div>
+  </nav>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <!-- Nhúng thư viện bootstrap -->
+     <link rel="stylesheet" href="./lib/bootstrap.min.css">
+     <script src="./lib/bootstrap.bundle.min.js"></script>
+     <!-- Nhúng thư viện angular js -->
+     <script src="./lib/angular.min.js"></script>
+     <script>
+          // Khai báo ng-app có tên myApp
+          var myApp = angular.module('myApp', []);
+          // Khai báo ng-controller có tên bindingCtrl
+          myApp.controller('bindingCtrl', function ($scope, $http) {
+               console.log("Khởi tạo thành công");
+               // property binding
+               $scope.logoSrc = "img/logo_bootstrap.webp";
+               // Event binding
+               // Khai báo function bắt sự kiện click
+               $scope.onClickDangKy = function(){
+                    console.log("Gọi hàm thành công");
+                    // Xử lí các logic khác của hàm
+               }
+               $scope.soLuongSanPham =2;
+               // Giới thiệu #http
+               // Neesu muonón 
+               $http({
+                    method: "GET",
+                    url: "http://localhost:3000/san-pham"
+               }).then(function(response){
+                    // Xử lý logic sau khi call api thành công
+                    console.log("Log thử api trả về ", response.data);
+               })
+
+          })// kết thúc controller
+     </script>
+</head>
+
+<body ng-app="myApp">
+     <div ng-controller="bindingCtrl">
+          <h6>Giới thiệu ổperty binding</h6>
+          <p>Hiện thị giá trị biêdn vào các attribute của thẻ html</p>
+          <p>Ví dụ hiện thị ảnh từ biến chứa đường dẫn ảnh</p>
+          <!-- Khai báo html -->
+          <img ng-src="{{ logoSrc }}" height="50px">
+          <!-- khai báo code js -->
+          <h6>Giới thiệu về event  binding </h6>
+          <p>Dùng để bắt sự kiện tương tác người dùng</p>
+          <p>Ví dụ: Bắt sự kiện click button</p>
+          <button ng-click="onClickDangKy()" class="btn btn-primary ">Đăng kí</button>
+
+          <h6>2-way data binding</h6>
+          <p>Dung để đồng bộ dữ liệu 2 chiều giữa html và js</p>
+          <p>Ví dụ : Khai báo input nhập số lượng sản phẩm và hiện thị ra html</p>
+          <div>
+               <span class="form-control">Nhập số lượng</span>
+               <input class="form-control" type="text" name="" id="" ng-model="soLuongSanPham">
+          </div>
+          <p>Số lượng sản phẩm: {{ soLuongSanPham }}</p>
+          <span class="badge bg-success" ng-if="soLuongSanPham > 0">Còn hàng</span>
+          <span class="badge bg-danger" ng-if="soLuongSanPham <= 0">Hết hàng</span>
+     </div>
+     
+</body>
+
+</html>

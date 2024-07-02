@@ -1,0 +1,82 @@
+<h4 class="m-4">Chi tiết sản phẩm</h3>
+     <form>
+          <div class="mb-2 mt-3">
+               <label for="id" class="form-label">ID:</label>
+               <input type="id" class="form-control" id="id" name="id" ng-model="product.id" disabled>
+          </div>
+          <div class="mb-2">
+               <label for="img" class="form-label">Ảnh sản phẩm:</label>
+               <input type="text" class="form-control" id="img" name="img" ng-model="product.anh" disabled>
+          </div>
+          <div class="mb-2">
+               <label for="name" class="form-label">Tên sản phẩm:</label>
+               <input type="text" class="form-control" id="name" name="name" ng-model="product.ten" disabled>
+          </div>
+          <div class="mb-2">
+               <label for="price" class="form-label">Giá sản phẩm:</label>
+               <input type="text" class="form-control" id="price" name="price" ng-model="product.giaBan" disabled>
+          </div>
+          <div class="mb-2">
+               <label for="price" class="form-label">Giá niêm yết:</label>
+               <input type="text" class="form-control" id="price" name="price" ng-model="product.giaNiemYet" disabled>
+          </div>
+          <div class="mb-2">
+               <label for="des" class="form-label">Mô tả sản phẩm:</label>
+               <textarea class="form-control" id="des" rows="2" ng-model="product.moTa" disabled></textarea>
+          </div>
+          <div class="mb-2">
+               <label for="pwd" class="form-label">Danh mục:</label>
+               <select class="form-select" ng-model="product.idDanhMuc" disabled>
+                    <option value="">-- Lựa chọn --</option>
+                    <option>1</option>
+                    <option>2</option>
+               </select>
+
+          </div>
+          <!-- <div class="mb-2">
+               <label for="pwd" class="form-label">Trạng thái:</label>
+               <select class="form-select" disabled >
+                    <option value="" >-- Lựa chọn --</option>
+                    <option>Còn hàng</option>
+                    <option>Hết hàng</option>
+               </select>
+
+          </div> -->
+          <div class="d-flex justify-content-center">
+
+               <a type="button" href="#!list-product" class="btn btn-secondary mx-2"><i
+                         class="fa-solid fa-arrow-left"></i> Quay
+                    lại</a>
+                    <a class="btn btn-warning sm" href="#!edit-product/{{ value.id }}" type="button"><i
+                         class="fa-solid fa-pen-to-square"></i> Sửa</a>
+               <a class="btn btn-danger mx-2" data-bs-toggle="modal" data-bs-target="#myModal" type="button"><i
+                         class="fa-solid fa-trash "></i> Xóa</a>
+          </div>
+         
+          </div>
+
+     </form>
+     <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Xóa</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+        
+              <!-- Modal body -->
+              <div class="modal-body">
+               Bạn có chắn chắn xóa không?
+              </div>
+        
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" ng-click="submitDel()">Xóa</button>
+              </div>
+        
+            </div>
+          </div>
+        </div>

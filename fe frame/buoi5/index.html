@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController" class="container">
+        <div class="row">
+            <div class="col-4" ng-repeat="(index, value) in listProduct">
+                 <div class="card">
+                    <img src="{{ value.image }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ value.name }}</h5>
+                    <p class="text-danger">{{ value.price }}</p>
+                    <p class="card-text">{{ value.des }}</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" ng-click="openDetail(value.id)">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Chi tiết sản phẩm</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <p>Tên sản phẩm: <span>{{ product.name }}</span></p>
+                            <p>Giá sản phẩm: <span>{{ product.price }}</span></p>
+                            <p>Mô tả sản phẩm: <span>{{ product.des }}</span></p>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+    <div class="controller" ng-controller="myController">
+        <div class="row">
+            <div class="col-12">
+                <table class="table" >
+                    <thead>
+                      <tr >
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Des</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="(index, value) in listProduct">
+                        <!-- <td >{{ value.id }}</td>  -->
+                        <td>{{ index + 1 }}</td>
+                        <td>{{ value.name }}</td>
+                        <td><img src="{{value.image}}" alt="" style="width: 100px; height: 100px;"></td>
+                        <td>{{ value.price }}</td>
+                        <td>{{ value.des }}</td>
+                        <td>
+                            <button>Thêm</button>
+                            <button>Sửa</button>
+                            <button>Xoá</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+    <script src="../lib/angular.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

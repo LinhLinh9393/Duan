@@ -1,0 +1,59 @@
+.payment{
+    width: 50%;
+    margin: 70px auto;
+}
+
+.payment__content {
+    background-color: #d9d9d9;
+    padding: 50px 0;
+}
+
+.payment__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    margin: 20px;
+    background-color: white;
+    height: 150px;
+    font-size: 20px;
+}
+
+.btn__complete{
+    text-align: right;
+}
+
+.btn__complete button{
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.active{
+    color: white;
+    background-color: red;
+}
+
+.payment__contact{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+    align-items: center;
+}
+
+.payment__contact span{
+    padding-bottom: 10px;
+}
+
+.payment__contact div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment__contact div img{
+    width: 40px;
+    height: 40px;
+}

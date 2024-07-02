@@ -1,0 +1,45 @@
+
+.logo>img{
+     max-height:70px;
+}
+.product>a>img{
+     width: 300px;
+     height: 300px;
+}
+.name-pr{
+     height: 80px;
+}
+.product_detail_sm{
+     width: 80px ;
+     height: 80px;
+}
+.product_detail_xl{
+     width: 400px ;
+     height: 400px;
+}
+.product_cart{
+     width: 100px ;
+     height: 100px;
+}
+.footer>ul>li>a{
+     color: #000;
+}
+.formft>input{
+     background-color: transparent;
+}
+.formft>input:focus{
+     outline: none;
+
+}
+
+/* CSS tùy chỉnh */
+.bg-tertiary {
+    display: flex; /* Sử dụng flexbox */
+    max-height: 100vh; /* Chiều cao tối đa của thanh bên trái */
+    width: auto; /* Thanh bên trái tự động mở rộng theo nội dung */
+}
+
+.bg-body-tertiary {
+    width: 300px; /* Độ rộng cố định của thanh bên trái */
+    min-height: 100%; /* Chiều cao tối thiểu của nội dung thanh bên trái */
+}

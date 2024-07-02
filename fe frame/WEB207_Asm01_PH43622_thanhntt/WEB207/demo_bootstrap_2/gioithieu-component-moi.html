@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=`, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Nhung thuw vien bootstrap-->
+    <link rel="stylesheet" href="./lib/bootstrap.min.css" />
+    <script src="./lib/bootstrap.bundle.min.js"></script>
+    <script src="./lib/font-fontawesome-ae333ffef2.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      
+      <div>
+     <h1>Giới thiệu front icon</h1>
+        <h6># Nhúng front icon</h6>
+        <!--#1. Nhúng thư viện-->
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <hr />
+      <div>
+        <h1>Giới thiệu badge</h1>
+        <!-- Dùng để đánh dấu đoạn văn bản, làm nổi bật trang thái nổi bật bộ  -->
+        <div>
+          <span class="badge bg-success">Qua môn</span>
+          <span class="badge bg-danger">Sắp qua môn</span>
+          <span class="badge bg-success"></span>
+        </div>
+        <h6>#Kết hợp icon với button</h6>
+        <div>
+          <button class="btn btn-success">
+            <i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm
+          </button>
+        </div>
+        <h6>#Badge bo tròn góc</h6>
+        <div>
+          <span class="badge bg-success rounded-pill">Qua môn</span>
+        </div>
+        <h6>#Ứng dụng badge để thiết kế button giỏ hàng có bộ đếm</h6>
+        <!-- 1.dàn html -->
+        <!-- 2. di chuyển thành phần về vị trí hợp lí -->
+        <!-- 3. Xử lí lại màu sắc -->
+        <div>
+          <button class="btn position-relative">
+            <i class="fa-solid fa-cart-shopping fa-xl"></i>
+            <span
+              class="badge bg-danger rounded-pill position-absolute"
+              style="top: -6px; right: -14px"
+              >99</span
+            >
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <h1># Table cơ bản</h1>
+        <div>
+          <table class="table table-striped table-hover table-bordered ">
+               <thead>
+                 <tr>
+                   <th>Firstname</th>
+                   <th>Lastname</th>
+                   <th>Email</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <td>John</td>
+                   <td>Doe</td>
+                   <td>john@example.com</td>
+                 </tr>
+                 <tr>
+                   <td>Mary</td>
+                   <td>Moe</td>
+                   <td>mary@example.com</td>
+                 </tr>
+                 <tr>
+                   <td>July</td>
+                   <td>Dooley</td>
+                   <td>july@example.com</td>
+                 </tr>
+               </tbody>
+             </table>
+        </div>
+      </div>
+      <hr>
+      <div>
+          <h1># Giới thiệu modal</h1>
+          <div>
+               <h6># Modal cơ bản </h6>
+               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalXacNhanXoa">
+                    Xóa
+                  </button>
+                  
+                  <!-- The Modal -->
+                  <div class="modal" id="modalXacNhanXoa">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                  
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Xác nhận xóa</h4>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                  
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          Bạn có chắc chắn xóa không
+                        </div>
+                  
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Xác nhận xóa</button>
+                        </div>
+                  
+                      </div>
+                    </div>
+                  </div>
+          </div>
+      </div>
+
+      <div>
+          <h1># Giới thiệu d-flex</h1>
+          <div>
+               <h6># Khai báo các thẻ div cần thiết</h6>
+               <div class="border border-danger ">
+                    <div class="bg-primary">
+                         <div class="">
+                              box-1
+                         </div>
+                    </div>
+                    <div class="bg-info">
+                         <div class="">
+                              box-2.1
+                         </div>
+                         <div class="">
+                              box-2.2
+                         </div>
+                    </div>
+                    <div class="bg-warning">
+                         <div class="">
+                              box-3.1
+                         </div>
+                         <div class="">
+                              box-3.2
+                         </div>
+                         <div class="">
+                              box-3.3
+                         </div>
+                    </div>
+               </div>
+               <h6># Sử dụng d-flex để dồn dữ liệu lên 1 dòng</h6>
+               <!-- align-items-center: căn giữa trên dưới -->
+               <!-- justify-content-center: căn gi -->
+               <div class="border border-danger d-flex align-items-center justify-content-around">
+                    <div class="bg-primary">
+                         <div class="">
+                              box-1
+                         </div>
+                    </div>
+                    <div class="bg-info">
+                         <div class="">
+                              box-2.1
+                         </div>
+                         <div class="">
+                              box-2.2
+                         </div>
+                    </div>
+                    <div class="bg-info">
+                         <div class="">
+                              box-2.1
+                         </div>
+                         <div class="">
+                              box-2.2
+                         </div>
+                    </div>
+                    <div class="bg-warning">
+                         <div class="">
+                              box-3.1
+                         </div>
+                         <div class="">
+                              box-3.2
+                         </div>
+                         <div class="">
+                              box-3.3
+                         </div>
+                    </div>
+               </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

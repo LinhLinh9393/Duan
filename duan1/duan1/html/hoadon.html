@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dự án 1</title>
+  <link rel="stylesheet" href="../lib/all.min.css">
+  <link rel="stylesheet" href="../lib/bootstrap.min.css">
+  <script src="../lib/all.min.js"></script>
+  <script src="../lib/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="row" style="background-color: #eca1a1;">
+      <div class="col-12 text-center">
+        <div class="logo">
+          <img src="../img/logo.jpg" alt="" width="15%">
+        </div>
+      </div>
+      <div class="col-12 text-center">
+        <h1>Pets Mart</h1>
+        <p>Magical pets</p>
+      </div>
+    </div>
+    <div class="row menu mt-3">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid ms-3">
+          <a class="navbar-brand" href="#">Trang chủ</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Sản phẩm
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Giỏ hàng</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" aria-disabled="true">Đăng nhập</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <h1 class="text text-center mt-3">Tiến hành đặt hàng</h1>
+  <div class="row mt-3">
+    <div class="col-12 ms-3">
+      <h2>Sản phẩm</h2>
+      <table class="table border">
+        <tr>
+          <th>Hình</th>
+          <th>Tên sản phẩm</th>
+          <th>Đơn giá</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+        </tr>
+        <tr>
+          <td><img src="" alt="" width="100"></td>
+          <td>san pham 1</td>
+          <td>100</td>
+          <td>1</td>
+          <td>100</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 ms-3">
+      <h2>Phương thức thanh toán</h2>
+      <div class="table">
+        <table class="table text-center">
+          <tr>
+            <td><input type="radio" name="pttn" checked>Trả tiền khi nhận hàng</td>
+            <td><input type="radio" name="pttn" checked>Chuyển khoản</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 ms-3">
+      <h2>Thông tin đặt hàng</h2>
+      <div class="thongtin__form ">
+        <table >
+          <tr>
+            <td>Người đặt hàng</td>
+            <td><input type="text" class="form-control ms-5" name="name" id=""></td>
+          </tr>
+          <tr>
+            <td>Địa chỉ</td>
+            <td><input type="text" class="form-control ms-5" name="address" id=""></td>
+          </tr>
+          <tr>
+            <td>Số điện thoại</td>
+            <td><input type="text" class="form-control ms-5" name="tel" id=""></td>
+          </tr>
+
+        </table>
+      </div><br>
+      <div class="dathang ms-5">
+        <input type="submit" value="Đặt hàng" class="btn btn-primary">
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+
+</body>
+
+</html>

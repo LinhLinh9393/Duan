@@ -1,0 +1,24 @@
+{
+  "danh-muc": [
+    {
+      "id": "DM01",
+      "ten": "Áo Khoác Nam"
+    },
+    {
+      "id": "DM02",
+      "ten": "Áo Blazer Nam"
+    },
+    {
+      "id": "DM03",
+      "ten": "Áo Thun Nam"
+    }
+  ],
+  "san-pham": [
+    {
+      "id": "dg",
+      "ten": "dfghj",
+      "anh": "sdfghj",
+      "tenDanhMuc": "02"
+    }
+  ]
+}

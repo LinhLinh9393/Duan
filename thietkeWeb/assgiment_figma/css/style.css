@@ -1,0 +1,296 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+h2{
+    color: #E51718;
+    font-size: 2rem;
+    text-align: center;
+    padding: 30px 0;
+}
+
+h1 a{
+    color: white;
+    text-decoration: none;
+}
+
+/* HEADER */
+.header__top{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    /* justify-content: space-around; */
+    padding: 10px;
+        background-color: #E51718;
+
+}
+
+.header__top .header__logo{
+    color: white;
+    width: 20%;
+    margin-left: 100px;
+}
+
+.header__top input{
+    width: 60%;
+}
+
+.header__top .header__socials{
+    width: 15%;
+    color: white;
+}
+
+.header__top .header__socials i{
+    padding: 10px 5px;
+    margin-left: 15px;
+}
+
+.header__top .header__socials a i{
+    color: white;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 10px auto;
+}
+
+nav ul li button:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+nav ul li button{
+    background: linear-gradient(to right, rgb(168, 39, 39), red);
+    color: white;
+    border: none;
+    /* padding: 10px 50px; */
+    width: 150px;
+    height: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li button span{
+    position: relative;
+    z-index: 2;
+}
+
+nav ul li button::after{
+    content: "";
+    width: 120%;
+    height: 110%;
+    background-color: rgb(250, 20, 20);
+    position: absolute;
+    display: block;
+    /* transform: skewX(45deg) translate(10px,-25px); */
+    transform: skew(45deg) translate(-120%,-25px);
+    transition: all .5s;
+    z-index: 1;
+}
+
+nav ul li button:hover::after{
+    transform: skewX(45deg) translate(10px,-25px);
+}
+
+/* BANNER */
+.banner{
+    background-image: url(../img/banner1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 400px;
+    margin-top: 10px;
+}
+
+/* SALES */
+.sales{
+    background-image: url(../img/banner2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100px;
+    margin-top: 40px;
+}
+
+/* smallSales*/
+.smallSales{
+    width: 80%;
+    margin: 20px auto;
+    background-color: #D9D9D9;
+    padding: 20px;
+
+}
+
+.smallSales__content{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+.smallSales__item{
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+/* attentionList */
+.attentionList{
+    width: 80%;
+    margin: 50px auto;
+    background-color: rgba(165, 13, 8, 0.1);
+}
+
+.attentionList__item2{
+    display: flex;
+    margin-top: 40px;
+}
+
+.attentionList__product button{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+}
+
+.attentionList__product button p{
+    text-align: left;
+}
+
+.attentionList__product button:last-of-type{
+    height: 40px;
+    border-radius: 10px;
+    background-color: #E51718;
+    color: white;
+    border: none;
+}
+
+.attentionList__product button:hover{
+    background-color: rgb(54, 153, 62);
+    cursor: pointer;
+}
+
+/* salesList */
+.salesList{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.salesList__content{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+}
+
+.salesList__item{
+    border: 1px solid black;
+}
+
+.salesList__item::after{
+    content: "";
+    width: 0%;
+    height: 100%;
+    display: block;
+    background-color: rgba(229, 23, 23, 0.5);
+    transform: translate(0px,-310px);
+    transition: all .5s;
+}
+
+.salesList__item:hover::after{
+    width: 100%;
+}
+
+.salesList__item p:first-of-type{
+    padding: 0 10px;
+}
+
+.salesList__item p:last-of-type{
+    color: #E51718;
+    padding: 10px;
+}
+
+.salesList__item button{
+    margin: 10px;
+    padding: 10px 70px;
+    background-color: #E51718;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+/* LASTBANNER */
+.lastBanner{
+    background-image: url(../img/banner3.png);
+     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 300px;
+    margin-top: 40px;
+}
+
+/* FOOTER */
+footer{
+    background-color:   #C7C0C0;
+    margin-top: 70px;
+}
+
+.footer__content{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.footer_last{
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* ANIMATION DEMO */
+.demo1{
+    transition: all .5s;
+}
+
+.demo1:hover{
+    transform: rotate(360deg);
+}
+
+.demo2{
+    transition: all .5s;
+}
+
+.demo2:hover{
+    transform: scale(1.1);
+}
+
+.demo3{
+    transition: all .5s;
+}
+
+.demo3:hover{
+    transform: skew(10deg);
+}
+
+.demo4{
+    transition: all .5s;
+}
+
+.demo4:hover{
+    transform: skew(-10deg);
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}

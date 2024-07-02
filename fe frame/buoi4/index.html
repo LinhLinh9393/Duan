@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <!-- <span ng-bind="message"></span>
+        <ul>
+            <li ng-bind="user.name"></li>
+            <li ng-bind="user.age"></li>
+            <li ng-bind="user.gender"></li>
+            <li ng-bind="user.address"></li>
+        </ul> -->
+
+        A: <input type="text" ng-model="soA"><br><br>
+        B: <input type="text" ng-model="soB"><br><br>
+        <button ng-click="tinh()">Tính A + B</button>
+    </div> 
+
+    <script>
+        var myApp=angular.module("myApp", [])
+        // var aa=angular.module("myApp", [])
+        // aa.controller("myController", function($scope){
+
+        myApp.controller("myController", function($scope){
+            // $scope.message="Hello world"
+            // $scope.user={
+            //     name: "Linh",
+            //     age: 20,
+            //     gender: "Nữ",
+            //     address: "Hà Nội"
+            // }
+
+            $scope.soA=""
+            $scope.soB=""
+            $scope.tinh =function(){
+                alert(Number($scope.soA) + Number($scope.soB))
+            }
+        })
+        
+    </script>
+</body>
+</html>
+
+    <!-- MPA(Mutil page Application): giao diện nhiều trang
+        SPA(Sigle ...): giao diện code 1 trang -->
+

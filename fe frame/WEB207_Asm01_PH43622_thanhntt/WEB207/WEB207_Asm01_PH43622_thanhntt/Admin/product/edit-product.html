@@ -1,0 +1,56 @@
+<h4 class="m-4">Cập nhật sản phẩm</h3>
+     <form>
+          <div class="mb-2 mt-3">
+               <label for="id" class="form-label">ID:</label>
+               <input type="id" class="form-control" id="id" name="id" ng-model="product.id">
+          </div>
+          <div class="mb-2">
+               <label for="img" class="form-label">Ảnh sản phẩm:</label>
+               <input type="text" class="form-control" id="img" name="img" ng-model="product.anh">
+          </div>
+          <div class="mb-2">
+               <label for="name" class="form-label">Tên sản phẩm:</label>
+               <input type="text" class="form-control" id="name" name="name" ng-model="product.ten">
+          </div>
+          <div class="mb-2">
+               <label for="price" class="form-label">Giá sản phẩm:</label>
+               <input type="text" class="form-control" id="price" name="price" ng-model="product.giaBan">
+          </div>
+          <div class="mb-2">
+               <label for="price" class="form-label">Giá niêm yết:</label>
+               <input type="text" class="form-control" id="price" name="price" ng-model="product.giaNiemYet">
+          </div>
+          <div class="mb-2">
+               <label for="des" class="form-label">Mô tả sản phẩm:</label>
+               <textarea class="form-control" id="des" rows="2" ng-model="product.moTa"></textarea>
+          </div>
+          <div class="mb-2">
+               <label for="pwd" class="form-label">Danh mục:</label>
+               <select class="form-select" ng-model="product.idDanhMuc">
+                    <option value="">-- Lựa chọn --</option>
+                    <option >1</option>
+                    <option>2</option>
+               </select>
+
+          </div>
+          <div class="mb-2">
+               <label for="pwd" class="form-label">Trạng thái:</label>
+               <select class="form-select">
+                    <option value="" >-- Lựa chọn --</option>
+                    <option>Còn hàng</option>
+                    <option>Hết hàng</option>
+               </select>
+
+          </div>
+          <div class="d-flex justify-content-center">
+
+               <a type="button" href="#!list-product"
+                    class="btn btn-secondary mx-2"><i class="fa-solid fa-arrow-left"></i> Quay
+                    lại</a>
+
+               <a type="button" class="btn btn-success" ng-click="onClickProduct()"><i class="fa-solid fa-plus"></i> Lưu</a>
+          </div>
+          <div class="alert alert-danger m-3" ng-if="formValidate.trangThai === false">
+               <strong>Form không hợp lệ!</strong><br> {{ formValidate.noiDung }}
+          </div>
+     </form>

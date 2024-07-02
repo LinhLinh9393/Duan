@@ -1,0 +1,27 @@
+.information{
+    width: 90%;
+    margin: 70px auto;
+}
+
+.information p{
+    padding: 20px 0;
+}
+
+.information h3{
+    padding-bottom: 40px;
+}
+
+.confirm{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.confirm p{
+    font-size: 20px;
+}
+
+.confirm button{
+    width: 200px;
+    height: 30px;
+    border: none;
+}

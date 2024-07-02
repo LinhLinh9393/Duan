@@ -1,0 +1,96 @@
+.container{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    margin: 0 auto;
+   
+}
+.header-top{
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+}
+/* a:active{
+    color: orangered;
+    /* border: 1px white solid; */
+/* } */ */
+.form-menu{
+    margin: auto;
+    margin-left: 6px;
+}
+nav{
+    color: white;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+.menu{
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+}
+.menu>li{
+    display: inline-block;
+}
+.menu>li>a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 0 5px;
+    font-size: 15px;
+}
+main{
+    display: flex;
+    border: 1px black solid;
+    border-radius: 20px;
+    padding: 15px;
+}
+.post{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    
+}
+.post-item{
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border: 1px black solid;
+    padding: 10px;
+}
+.post-item img{
+    width: 100%;
+    transition: 1s ease-in-out;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.post-item img:hover{
+    transform: rotate(360deg) ;
+    transform: scale(1.1);
+}
+.main-right{
+    padding: 5px;
+}
+.text1{
+    background-color: blue;
+    color: aliceblue;
+    padding: 10px;
+    
+}
+.text2{
+    border: 1px black solid;
+    padding: 10px;
+}
+footer{
+    background-color: red;
+    text-align: center;
+    font-family: abc;
+    padding: 10px;
+    color: white;
+}
+@font-face{
+    font-family: abc;
+    src: url('font/DancingScript.ttf');
+}

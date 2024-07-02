@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/all.min.css">
+</head>
+
+<body ng-app="myApp">
+    <div ng-include="'layouts/_header.html'"></div>
+    <div ng-view></div>
+
+    <div ng-include="'layouts/_footer.html'"></div>
+
+
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script src="../lib/all.min.js"></script>
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+    <script src="controllers/ListProductController.js"></script>
+    <script src="controllers/AddProductController.js"></script>
+    <script src="controllers/UpdateProductController.js"></script>
+    <script src="controllers/UserController.js"></script>
+
+    <script>
+        var myApp = angular.module("myApp", ['ngRoute'])
+        myApp.config(function ($routeProvider) {
+            $routeProvider
+                .when("/home", {
+                    templateUrl: "views/home.html",
+                    // controller: ListProductController 
+                })
+                .when("/list-product", {
+                    templateUrl: "views/list-product.html",
+                    controller: ListProductController 
+                })
+                .when("/add-product", {
+                    templateUrl: "views/add-product.html",
+                    controller: AddProductController
+                })
+                .when("/update-product/:id", {
+                    templateUrl: "views/update-product.html",
+                    controller: UpdateProductController
+                })
+                .when("/chitietsp",{
+                    templateUrl: "views/chitiet.html",
+                    // controller: listController
+                })
+                .when("/list-user",{
+                    templateUrl: "views/list-user.html",
+                    controller: UserController
+                })
+                .when("/add-user", {
+                    templateUrl: "views/add-user.html",
+                    controller: UserController
+                })
+                .when("/update-user/:id", {
+                    templateUrl: "views/update-user.html",
+                    controller: UserController
+                })
+                .when("/login",{
+                    templateUrl: "../login.html",
+                })
+                .when("/register",{
+                    templateUrl: "../register.html",
+                })
+                .otherwise({
+                    redirectTo: "/home"
+                })
+        })
+    </script>
+    <script src="controllers/HeaderController.js"></script>
+    
+</body>
+
+</html>

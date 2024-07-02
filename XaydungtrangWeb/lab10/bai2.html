@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai 2 lab10</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <style>
+            p{
+                color: red;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h3>Đặt mua</h3>
+        <form action="" id="my_frm" onsubmit="return validation()">
+            <label for="">Khach</label>
+            <input type="text" name="khach">
+            <p id="KhachError"></p>
+            <label for="">Size</label>
+            <select name="size" id="" onchange="chonsize()">
+                <option value="">----Chọn----</option>
+                <option value="1">----S----</option>
+                <option value="2">----M----</option>
+                <option value="3">----L----</option>
+            </select>
+            <p id="SizeError"></p>
+            <label for="">Don gia</label>
+            <input type="number" name="dongia"><br><br>
+            <label for="">So luong</label>
+            <input type="number" name="soluong">
+            <p id="soluongError"></p>
+            <label for="">Khuyen mai</label>
+            <input type="radio" name="km" onclick="chonkm()" value="1">Có
+            <input type="radio" name="km" onclick="chonkm()" value="2">không
+            <p id="kmError"></p>
+            <label for="">tien km</label>
+            <input type="text" name="tkm"><br><br>
+            <label for="">thanhtien</label>
+            <input type="text" name="thanhtien"><br><br>
+            <button class="form-button" tabindex="3">Đăng ký</button>
+            <button class="form-button" tabindex="4">Nhâp lại</button>
+        </form>
+    </div>
+    
+</body>
+</html>

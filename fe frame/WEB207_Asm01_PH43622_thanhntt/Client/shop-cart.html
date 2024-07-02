@@ -1,0 +1,74 @@
+<nav class="container mt-3" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+        <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+    </ol>
+</nav>
+<div class="container mb-5">
+    <div class="border-0 border-bottom my-3">
+        <h1 class="text-center ">Giỏ hàng</h1>
+    </div>
+    <h4 class="m-3 pb-3">Thông tin giỏ hàng</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col" class="text-center">Ảnh</th>
+                <th scope="col" class="text-center">Tên sản phẩm</th>
+                <th scope="col" class="text-center">Giá sản phẩm</th>
+                <th scope="col" class="text-center">Số lượng</th>
+                <th scope="col" class="text-center">Tổng</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in cart">
+                <td>{{ item.id }}</td>
+                <td class="text-center">
+                    <img ng-src="{{ item.cart[0].anhSP }}" alt="{{ item.ten }}" class="img-fluid"
+                        style="max-height: 50px;">
+                </td>
+                <td class="text-center">{{ item.cart[0].tenSP }}</td>
+                <td class="text-center">{{ item.cart[0].giaTien | number }}</td>
+                <td class="text-center ">
+                    <input class="form-control ms-5" min="1" style="width: 100px;" type="number"
+                        ng-model="item.cart[0].soluong" ng-blur="updateCartItem(item)">
+                </td>
+                <td class="text-center">{{ item.cart[0].soluong * item.cart[0].giaTien }}</td>
+                <td class="text-center">
+                    <button type="button" class="btn" ng-click="submitDel(item.id)">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="text-center" colspan="4"><strong>Tổng</strong></td>
+                <td class="text-center">{{ tongsoluong() }}</td>
+                <td class="text-center">{{ tongtien() }}</td>
+                <td class="text-center"></td>
+
+            </tr>
+        </tfoot>
+
+    </table>
+    <div class="d-flex justify-content-end">
+        <div class="col-6 border bg-body-secondary shadow">
+            <h5 class="m-3">Tổng tiền</h5>
+            <table class="table table-bordered">
+                <tr>
+                    <th scope="row">Số lượng</th>
+                    <td>{{ tongsoluong() }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tổng</th>
+                    <td>{{ tongtien() + 30000 }}</td>
+                </tr>
+            </table>
+            <div class="d-flex justify-content-end m-3">
+                <a href="#!checkout" class="btn btn-success container-fluid" type="submit" >Xác nhận đặt hàng</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <form action="">
+            <div>
+                userId:
+                    <select ng-model="data.userId">
+                        <option value="" hidden>-- Chọn User --</option>
+                        <option value="{{ value.id }}" ng-repeat="(index, value) in listUser">
+                            <span>{{ value.name }}</span>
+                        </option>
+                    </select>
+            </div>
+           <div>
+            <!-- userId: <input type="text" ng-model="data.userId"><br> -->
+                title: <input type="text" ng-model="data.title">
+                <span ng-show="validate.title">Tiêu đề không dc để trống</span>
+           </div>
+           <div>
+                body: <input type="text" ng-model="data.body">
+                <span ng-show="validate.body">Nội dung không dc để trống</span>
+           </div>
+           <div>
+                <button ng-show="idUpdate == ''" type="button" ng-click="submit()">Nhập</button>
+                <button ng-show="idUpdate != ''" ng-click="confirmUpdate()">Sửa</button>
+           </div>
+           
+        </form>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>UserID</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="(index, value) in listPost">
+                    <td >{{ value.userId }}</td>
+                    <td>{{ value.id }}</td>
+                    <td>{{ value.title }}</td>
+                    <td>{{ value.body }}</td>
+                    <td>
+                        <button ng-click="update( value.id )">Sửa</button>
+                        <button ng-click="deletePost(value.id)">Xoá</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        var myApp = angular.module("myApp", [])
+        myApp.controller("myController", function ($scope, $http) {
+            var api = "http://localhost:3000/post/"
+            $http.get(api)
+                .then(function(response){
+                    $scope.listPost = response.data;
+                })
+                .then(function(error){
+                    console.log("Lỗi API");
+                })
+
+            var api2 = "http://localhost:3000/users/"
+            $http.get(api2)
+                .then(function(response){
+                    $scope.listUser = response.data;
+                })
+                .then(function(error){
+                    console.log("Lỗi API");
+                })
+
+            $scope.data={
+                userId: "",
+                title : "",
+                body : ""
+            }
+            $scope.submit= function(){
+                if( checkEmpty()){
+                    $http.post(api, angular.copy($scope.data))
+                        .then(function(response){
+                            alert("Thêm thành công")
+                        })
+                        .catch(function(error){
+                            console.log("Lỗi API");
+                        })
+                }
+               
+            }
+
+            $scope.deletePost =function(id){
+                let check= confirm("Bạn có muốn xoá không?")
+                if(check){
+                    $http.delete(api + id)
+                        .then(function(response){
+                            alert("Xoá thành công")
+                        })
+                        .catch(function(error){
+                            console.log("Lỗi API");
+                        })
+                }
+            }
+
+            $scope.idUpdate = ''
+            $scope.update = function(id){ 
+                $http.get(api + id)
+                .then(function(response){
+                    $scope.data = response.data
+                    $scope.idUpdate = id
+                })
+                .catch(function(error){
+                    console.log("Lỗi API");
+                })
+            }
+
+            $scope.confirmUpdate = function(){
+                $http.patch(api + $scope.idUpdate, angular.copy($scope.data))
+                    .then(function(response){
+                        alert("Sửa thành công")
+                    })
+                    .catch(function(error){
+                        console.log("Lỗi API");
+                    })
+            }
+
+            $scope.validate = {
+                title: false,
+                body: false
+            }
+            function checkEmpty(){
+                $scope.validate.title= $scope.data.title == "" ? true : false;
+                $scope.validate.body =$scope.data.body == "" ? true : false;
+                if(!$scope.validate.title && !$scope.validate.body){
+                    return true
+                }else {
+                    return false
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+
+body{
+    border-collapse: collapse;
+    border-color: green;
+    text-align: center;
+}
+.title1{
+    border-color: greenyellow;
+    background-color: rgba(28, 204, 16, 0.959);
+    color: white;
+} 
+.title2{
+    background-color: rgba(123, 234, 83, 0.959);
+    color: black;
+} 
+.chu{
+    color: red;
+}
+.title3{
+   border-color: yellowgreen;
+} 

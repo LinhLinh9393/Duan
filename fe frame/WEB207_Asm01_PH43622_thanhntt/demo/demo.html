@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Trang chủ</title>
+     <link rel="stylesheet" href="/lib/bootstrap.min.css" />
+     <link rel="stylesheet" href="/lib/style.css">
+     <script src="/lib/bootstrap.bundle.min.js"></script>
+     <script src="/lib/font-fontawesome-ae333ffef2.js"></script>
+     <script src="/lib/angular.min.js"></script>
+     <script src="/lib/angular-route.js"></script>
+</head>
+
+<body ng-app="myApp">
+     <div class="container">
+          <div class="border rounded bg-body-secondary" ng-controller="loginCtrl">
+               <form>
+                    <div class="mb-3 mt-3">
+                         <label for="tenDangNhap" class="form-label">Tên đăng nhập:</label>
+                         <input type="text" class="form-control" id="tenDangNhap" placeholder="Nhập tenDangNhap"
+                              ng-model="tenDangNhap">
+                    </div>
+                    <div class="mb-3">
+                         <label for="pwd" class="form-label">Mật khẩu:</label>
+                         <input type="password" class="form-control" id="pwd" placeholder="Nhập mật khẩu"
+                              ng-model="password">
+                    </div>       
+                    <a type="button" ng-click="formDangNhap()" class="btn btn-primary">Đăng nhập</a>
+               </form>
+          </div>
+     </div>
+     <script>
+          var myApp = angular.module('myApp', []);
+          myApp.controller("loginCtrl", function ($scope, $http) {
+               var api = "http://localhost:3000/user/"
+               $scope.formDangNhap = function () {
+                    $http.get(api + "?tenDangNhap=" + $scope.tenDangNhap + "&password=" + $scope.password)
+                    .then(function(response){
+                         if(response.data.length == 0){
+                              alert("Không thành công")
+                         }else if(response.data[0].role == "1"){
+                              // Lưu thông tin người đăng nhập vào localStorage
+                              localStorage.setItem("id", response.data[0].id)
+                              localStorage.setItem("hoTen", response.data[0].hoTen)
+                              window.location.href = "Admin/index.html";
+                         }else if(response.data[0].role == "2"){
+                              window.location.href = "index.html";
+                         }
+                         console.log(response.data);
+                    })
+               }
+          })
+     </script>
+</body>
+
+</html>

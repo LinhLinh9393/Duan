@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="" class="wrapper">
+            <div class="form-group">
+                Họ và tên: <br>
+                <input type="text" tabindex="1" class="form-control">
+            </div>    
+            <div class="form-group">
+                <legend>Giới tính:</legend>
+                <label><input name="gt" type="radio" checked="checked">Nam</label>
+                <label><input name="gt" type="radio">Nữ</label>
+            </div>
+            <div class="form-group">
+                <legend>Hình ảnh:</legend>
+                <label for=""><input name="photo" type="file"></label>
+            </div>
+            <div class="form-group">
+                Quốc tịch: <br>
+                <select>
+                    <input type="text" value="Việt Nam" readonly class="form-control">
+                </select>   
+            </div>
+            <div class="form-group">
+                <legend>Sở thích</legend>
+                <label for=""><input type="checkbox">Thể thao</label>
+                <label for=""><input type="checkbox">Du lịch</label>
+                <label for=""><input type="checkbox">Âm nhạc</label>
+                <label for=""><input type="checkbox">Ẩm thực</label>
+            </div>
+            <div class="form-group">
+                Ghi chú:<br>
+                <textarea class="form-control" tabindex="2" name="" id="" cols="50" rows="10"></textarea>
+            </div>
+            <hr>
+            <button class="form-button" tabindex="3">Đăng ký</button>
+            <button class="form-button" tabindex="4">Nhâp lại</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../Lab01x02"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "demo_bootstrap_3"
+	}
+}

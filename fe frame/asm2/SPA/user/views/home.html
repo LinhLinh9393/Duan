@@ -1,0 +1,222 @@
+<div class="row">
+    <div class="col-xl-8">
+      <img src="../img/banner.jpg" alt="" srcset="" style="height: 400px;width: 820px;">
+    </div>
+    <div class="col-xl-4">
+      <div class="row">
+        <div class="col-12"><img src="../img/tải xuống (1).jpg" alt="" srcset="" style="height: 190px;width: 405px;">
+        </div>
+      </div><br>
+      <div class="row">
+        <div class="col-12"><img src="../img/tải xuống.jpg" alt="" srcset="" style="height: 190px;width: 405px;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+      <h2 class="text text-center text-danger  ">Sản phẩm bán chạy </h2>
+      <div class="row me-4">
+        <div class="col-xl-4  p-3 col-sm-6 "  ng-repeat="(index, value) in listSP | filter:{ name: name}">
+          <div class="card">
+            <img src="{{ value.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="text d-flex ">
+                <h5 class="card-title text-danger"><span>{{ value.name }}</span></h5>
+              </div>
+              <p class="card-text"><span>{{ value.mota }}</span></p>
+              <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;"><span>{{ value.price | currency: '':0 }} vnđ</span></p>
+              <a href="#!/chitietsp/{{ value.id }}"><button class="btn btn-primary container-fluid" >Mua ngay</button></a>
+
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-xl-4 p-3 col-sm-6">
+          <div class="card">
+            <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Nước hoa</h5>
+              <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+              <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+              <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-xl-4 p-3 col-sm-6">
+          <div class="card">
+            <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Nước hoa</h5>
+              <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+              <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+              <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+  </div>
+
+  <div class="row bg-black p-5 text-center">
+    <div class="col-7">
+      <div class="card text-bg-dark">
+        <img src="../img/tải xuống.jpg" class="card-img" alt="...">
+      </div>
+    </div>
+    <div class="col-5 ">
+      <div class="card bg-black text-light " style="height: 305px; ">
+        <div class="card-body">
+          <p class="card-title">Ưu đãi đặc quyền</p><br>
+          <h3 class="card-text">Sự lựa chọn hoàn hảo.</h4>
+            <p>Mang đến trải nghiệm tốt nhất</p>
+            <p class="d-inline-flex gap-1">
+              <button class="btn border  text-light " type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Xem thêm
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card bg-black ">
+                <span class="text text-light">Nước hoa chính hãng là những chai nước hoa Auth nhập khẩu từ các thương
+                  hiệu dầu thơm nổi tiếng trên thế giới. Nước hoa không chỉ là mùi hương mà còn thể hiện phong cách cá
+                  tính của người dùng nó, đặc biệt hơn Nước hoa còn giúp bạn gây ấn tượng, thiện cảm với những người
+                  xunh quanh.
+                </span>
+              </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="row bg-black p-5 text-center  ">
+    <div class="col-5 ">
+      <div class="card bg-black text-light " style=" height: 305px; ">
+        <div class="card-body">
+          <p class="card-title">Ưu đãi đặc quyền</p><br>
+          <h3 class="card-text">Sự lựa chọn hoàn hảo. </h4>
+            <p>Mang đến trải nghiệm tốt nhất</p>
+            <p class="d-inline-flex gap-1">
+              <button class="btn border text-light " type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Xem thêm
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card bg-black ">
+                <span class="text text-light">Nước hoa chính hãng là những chai nước hoa Auth nhập khẩu từ các thương
+                  hiệu dầu thơm nổi tiếng trên thế giới. Nước hoa không chỉ là mùi hương mà còn thể hiện phong cách cá
+                  tính của người dùng nó, đặc biệt hơn Nước hoa còn giúp bạn gây ấn tượng, thiện cảm với những người
+                  xunh quanh.
+                </span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-7">
+      <div class="card text-bg-dark">
+        <img src="../img/tải xuống (1).jpg" class="card-img" alt="...">
+      </div>
+    </div>
+  </div>
+
+  <div class="row me-4 ms-3 mt-3 ">
+    <h2 class="text text-center text-danger  ">Sản phẩm </h2>
+    <div class="col-xl-4  p-3 col-sm-6 "  ng-repeat="(index, value) in listSP">
+      <div class="card">
+        <img src="{{ value.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <div class="text d-flex ">
+            <h5 class="card-title text-danger"><span>{{ value.name }}</span></h5>
+          </div>
+          <p class="card-text"><span>{{ value.mota }}</span></p>
+          <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;"><span>{{ value.price | currency: '':0  }} vnđ</span></p>
+            <a href="#!/chitietsp/{{ value.id }}"><button class="btn btn-primary container-fluid" >Mua ngay</button></a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-xl-4 p-3 col-sm-6">
+      <div class="card">
+        <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nước hoa</h5>
+          <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+          <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+          <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 p-3 col-sm-6">
+      <div class="card">
+        <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nước hoa</h5>
+          <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+          <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+          <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <!-- <div class="row me-3 ms-3 ">
+    <div class="col-xl-4  p-3 col-sm-6 ">
+      <div class="card">
+        <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <div class="text d-flex ">
+            <h5 class="card-title">Nước hoa </h5>
+            <p class="bg-danger text-light badge ms-3 ">Hot sale</p>
+          </div>
+          <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+          <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+          <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 p-3 col-sm-6">
+      <div class="card">
+        <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nước hoa</h5>
+          <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+          <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+          <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 p-3 col-sm-6">
+      <div class="card">
+        <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Nước hoa</h5>
+          <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+          <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+          <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example ">
+      <ul class="pagination  justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div> -->
+

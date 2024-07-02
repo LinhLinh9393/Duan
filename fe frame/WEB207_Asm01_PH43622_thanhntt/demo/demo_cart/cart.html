@@ -1,0 +1,30 @@
+<h1>Cart</h1>
+<table class="table">
+     <thead>
+          <tr>
+               <th>ID</th>
+               <th>Tên</th>
+               <th>Giá</th>
+               <th>SỐ lượng</th>
+               <th>Thành tiền</th>
+               <th></th>
+          </tr>
+     </thead>
+     <tbody>
+          <tr ng-repeat="item in cart">
+               <td>{{ item.id }}</td>
+               <td>{{ item.ten }}</td>
+               <td>{{ item.giaBan | number }}</td>
+               <td><input type="number" ng-model="item.soluong">{{ item.soluong | number }}</td>
+               <td>{{ (item.giaBan) * (item.soluong) | number }}</td>
+               <td ng-click="xoa($index)">x</td>
+          </tr>
+          <tr>
+               <th></th>
+               <th></th>
+               <th></th>
+               <th>{{ tongsoluong() }}</th>
+               <th>{{ tongtien() | number }}</th>
+          </tr>
+     </tbody>
+</table>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-include="'_header.html'"> </div>
+
+    <div ng-include="'_sitebar.html'"> </div>
+
+    <div>
+        <a href="#!/">TRang chủ</a>
+        <a href="#!/gioithieu">Giới Thiệu</a>
+        <a href="#!/lienhe">Liên hệ</a>
+        <a href="#!/sanpham">Sản phẩm</a>
+    </div>a
+
+    <div ng-view></div>
+a
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script>
+        var myApp=angular.module("myApp",['ngRoute'])
+        myApp.config(function($routeProvider){
+            $routeProvider
+                .when('/',{
+                    templateUrl: "trangchu.html"
+                })
+                .when('/gioithieu',{
+                    templateUrl: "gioithieu.html"
+                })
+                .when('/lienhe',{
+                    templateUrl: "lienhe.html"
+                })
+                .otherwise({
+                    redirectTo: "/"
+                })
+        })
+    </script>
+</body>
+</html>

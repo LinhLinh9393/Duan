@@ -1,0 +1,9 @@
+{
+    "name": "linh_linh/base_exam_02",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}

@@ -1,0 +1,13 @@
+{
+  "post": [
+    {
+      "id": "1",
+      "name": "Quả táo",
+      "pass": "1234",
+      "email": "linh@gmail.com",
+      "theLoai": "Nhân viên",
+      "phone": "0123456789",
+      "date": "2024-01-06"
+    }
+  ]
+}

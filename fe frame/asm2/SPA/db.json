@@ -1,0 +1,87 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@fpt.edu.vn",
+      "password": "123456",
+      "role": "1"
+    },
+    {
+      "id": "2",
+      "username": "Linh Linh",
+      "email": "linhdttph43993@fpt.edu.vn",
+      "password": "123456",
+      "role": "2"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Nước hoa Dior chính hãng Armaf Club De Nuit EDP 105ml",
+      "price": "2300000",
+      "image": "https://fraluxperfume.com/wp-content/uploads/2020/02/miss-dior-5.jpg",
+      "mota": "Nước hoa Dior chính hãng, dành cho nữ  mang một hương thơm vô cùng nhẹ nhàng và tinh tế. Ngay từ khi có mặt trên thị trường, chai nước hoa luôn được phái đẹp yêu thích.",
+      "xuatxu": "Pháp",
+      "phongcach": "Nữ tính, sang trọng, quyến rũ",
+      "iddm": "1"
+    },
+    {
+      "id": "2",
+      "name": "Nước hoa Chanel chính hãng Armaf Club De Nuit EDP 105ml",
+      "price": "2500000",
+      "image": "https://kenperfume.com/wp-content/uploads/2022/09/Nuoc-Hoa-Nu-Chanel-Coco-Mademoiselle-Intense-1024x1024.jpg.webp",
+      "mota": "Nước hoa Channel mang mùi hương của cây hoắc hương kết hợp với một chút nặng nề và ấm áp từ hổ phách là những phẩm chất riêng biệt tạo nên một mùi hương lôi cuốn.",
+      "xuatxu": "Pháp",
+      "phongcach": "Nữ tính, sang trọng, quyến rũ",
+      "iddm": "2"
+    },
+    {
+      "id": "3",
+      "name": "Nước hoa Versace chính hãng Armaf Club De Nuit EDP 105ml",
+      "price": "1500000",
+      "image": "https://product.hstatic.net/1000391653/product/anh077_08b73663ecf347a0bbb8c9d13220d828_1024x1024.jpg",
+      "mota": "Versace Pour Homme mở đầu với hương thơm cam chanh sảng khoái, gây một chút liên tưởng tới sự mát mẻ nhưng tăng lên một chút hứng khởi trong thái độ của mùi hương.",
+      "xuatxu": "Pháp",
+      "phongcach": "Nữ tính, sang trọng, quyến rũ",
+      "iddm": "3"
+    },
+    {
+      "id": "18d1",
+      "name": "sakfkj",
+      "image": "/img/tải xuống.jpg",
+      "price": "2000000",
+      "mota": "sfsafa",
+      "iddm": "2"
+    }
+  ],
+  "danhmuc": [
+    {
+      "id": "1",
+      "name": "Nước hoa Dior"
+    },
+    {
+      "id": "2",
+      "name": "Nước hoa Channel"
+    },
+    {
+      "id": "3",
+      "name": "Nước hoa Versace"
+    }
+  ],
+  "cart": [
+    {
+      "id": "2b33",
+      "cart": [
+        {
+          "idSP": "1",
+          "tenSP": "Nước hoa Dior chính hãng Armaf Club De Nuit EDP 105ml",
+          "anhSP": "https://fraluxperfume.com/wp-content/uploads/2020/02/miss-dior-5.jpg",
+          "giaTien": "2300000",
+          "soluong": 1,
+          "thanhTien": "2300000"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Admin - Sản phẩm</title>
+     <link rel="stylesheet" href="/lib/bootstrap.min.css">
+     <script src="/lib/bootstrap.bundle.min.js"></script>
+     <script src="/lib/font-fontawesome-ae333ffef2.js"></script>
+     <script src="/lib/angular.min.js"></script>
+     <script src="/lib/angular-route.js"></script>
+     <script>
+          var app = angular.module('myApp', ['ngRoute']);
+          app.config(function ($routeProvider) {
+               $routeProvider
+                    .when("/list-product", {
+                         templateUrl: "product/list-product.html",
+                         controller: "listProductCtrl"
+                    }).when("/create-product", {
+                         templateUrl: "product/create-product.html",
+                         controller: "createProductCtrl"
+                    }).when("/detail-product/:id", {
+                         templateUrl: "product/detail-product.html",
+                         controller: "detailProductCtrl"
+                    }).when("/edit-product/:id", {
+                         templateUrl: "product/edit-product.html",
+                         controller: "editProductCtrl"
+                    }).when("/list-category", {
+                         templateUrl: "category/list-category.html",
+                         controller: "listCategoryCtrl"
+                    }).when("/create-category", {
+                         templateUrl: "category/create-category.html",
+                         controller: "createCategoryCtrl"
+                    }).when("/edit-category/:id", {
+                         templateUrl: "category/edit-category.html",
+                         controller: "editCategoryCtrl"
+                    }).when("/list-order", {
+                         templateUrl: "order/list-order.html",
+                         controller: "listOrderCtrl"
+                    }).when("/detail-order/:id", {
+                         templateUrl: "order/detail-order.html",
+                         controller: "detailOrderCtrl"
+                    }).when("/edit-order/:id", {
+                         templateUrl: "order/edit-order.html",
+                         controller: "editOrderCtrl"
+               
+                    }).when("/user", {
+                         templateUrl: "user/list.html",
+                         controller: "listUserCtrl"
+                    })
+          })
+     </script>
+     <script src="product/create-product.js"></script>
+     <script src="product/edit-product.js"></script>
+     <script src="product/list-product.js"></script>
+     <script src="product/detail-product.js"></script>
+     <script src="category/list-category.js"></script>
+     <script src="category/create-category.js"></script>
+     <script src="category/edit-category.js"></script>
+     <script src="order/edit-order.js"></script>
+     <script src="order/list-order.js"></script>
+     <script src="order/detail-order.js"></script>
+     <script src="user/list.js"></script>
+</head>
+
+<body ng-app="myApp">
+     <nav class="navbar navbar-expand-lg bg-primary shadow navbar-dark">
+          <div class="container-fluid">
+               <a class="navbar-brand mx-5" href="../index.html">
+                    <h3>Admin</h3>
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+                    <ul class="nav ">
+
+                         <li class="nav-item dropdown  ">
+                              <a class="nav-link dropdown-toggle text-light" href="#" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                   Xin chào Admin
+                              </a>
+                              <ul class="dropdown-menu">
+                                   <li><a class="dropdown-item" href="#">Thông tin admin</a></li>
+                                   <!-- <li><a class="dropdown-item" href="#">Another action</a></li>-->
+                                   <li>
+                                        <hr class="dropdown-divider">
+                                   </li>
+                                   <li><a class="dropdown-item" href="../Client/index.html" type="button"
+                                             class="btn btn-primary" data-bs-toggle="modal"
+                                             data-bs-target="#exampleModal">
+                                             Đăng xuất
+                                        </a></li>
+                              </ul>
+                         </li>
+                    </ul>
+               </div>
+          </div>
+     </nav>
+     <div class="d-flex">
+          <!-- 1. bên trái: Menu -->
+          <div class="bg-primary" style="max-width: 100%;">
+               <div class="bg-primary " style="width: 300px; height: calc(100vh - 68px);">
+                    <ul class="nav flex-column list-group">
+                         <li class="nav-item list-group-item bg-primary border-0 fw-bold">
+                              <a class="nav-link text-light " href="#!list-category">Quản lí danh
+                                   mục</a>
+                         </li>
+                         <li class="nav-item list-group-item bg-primary border-0 fw-bold ">
+                              <a class="nav-link text-light" href="#!list-product">Quản lí sản
+                                   phẩm</a>
+                         </li>
+                         <li class="nav-item list-group-item bg-primary  border-0 fw-bold">
+                              <a class="nav-link text-light" href="#!list-order">Quản lí đơn hàng</a>
+                         </li>
+                         <li class="nav-item list-group-item bg-primary  border-0 fw-bold">
+                              <a class="nav-link text-light" href="#!user">Quản lí đơn hàng</a>
+                         </li>
+                    </ul>
+               </div>
+          </div>
+          <div class="mb-5" style="width: calc(100% - 300px);">
+               <div class="container-fluid" ng-view>
+               </div>
+          </div>
+     </div>
+</body>
+
+</html>

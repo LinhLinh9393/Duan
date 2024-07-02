@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../demo_bootstrap_4"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "WEB207_300BaiCodeThieuNhi_Part01_Ph43622_thanhntt"
+	}
+}

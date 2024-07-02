@@ -1,0 +1,9 @@
+{
+    "name": "linh_linh/base",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}

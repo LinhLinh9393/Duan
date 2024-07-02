@@ -1,0 +1,26 @@
+<h1 class="text-center">Thêm mới</h1>
+<div class="form p-5">
+    <div class="mb-3">
+        <label for="">name</label>
+        <input type="text" class="form-control" ng-model="data.name">
+        <span ng-show="validate.name">Dữ liệu không dc để trống</span>
+
+    </div>
+    <div class="mb-3">
+        <label for="">Email</label>
+        <input type="text" class="form-control" ng-model="data.email">
+        <span ng-show="validate.email">Dữ liệu không dc để trống</span>
+        <span ng-show="regex.email">{{regex.email}}</span>
+
+    </div>
+    <div class="mb-3">
+        <label for="">Date</label>
+        <input type="date" class="form-control" ng-model="data.date">
+        <span ng-show="validate.date">Dữ liệu không dc để trống</span>
+
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" ng-click="submit()">Thêm</button>
+        <a href="#!/list"><button class="btn btn-danger">Quay lại</button></a>
+    </div>
+</div>

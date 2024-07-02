@@ -1,0 +1,66 @@
+<a href="#!/add-product"><button class="btn btn-primary mt-3 ms-2 ">Thêm mới</button></a>
+<div class="nav justify-content-end me-4">
+  <select ng-model="sortPrice" class="justify-content-end me-2 ">
+    <option value="">-- Sắp xếp --</option>
+    <option value="+price">-- Giá tăng dần --</option>
+    <option value="-price">-- Giảm giảm dần --</option>
+  </select>
+  <input type="text" placeholder="Tên" ng-model="name">
+
+</div>
+
+<table class="table border mt-3 " style="height: 70vh; ">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Tên sản phẩm</th>
+      <th style="width: 10%">Ảnh sản phẩm</th>
+      <th >Giá sản phẩm</th>
+      <th style="width: 35%">Mô tả</th>
+      <th>Danh mục</th>
+      <th>Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="(index, value) in listSP 
+      | orderBy:sortPrice 
+      | filter:{
+        name: name
+      }
+       ">
+        <th scope="row">{{index +1}}</th>
+        <td>{{value.name}}</td>
+        <td>
+          <img src="{{value.image}}" alt="" width="100%">
+        </td>
+        <td>{{value.price | currency: "":0}} vnđ</td>
+        <td>{{value.mota}}</td>
+        <td> {{value.iddm}}</td>
+        <th>
+          <a href="#!/update-product/{{ value.id }}"><button class="btn btn-warning "
+              ng-click="update( value.id )">Sửa</button></a>
+          <button class="btn btn-danger  " ng-click="delete(value.id)" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Xoá</button>
+        </th>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cảnh báo</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn có muốn xoá không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" ng-click="confirmDelete()">Xoá</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/all.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+</head>
+<body ng-app="myApp">
+    <div class="contaner" ng-controller="myController">
+        <div class="row">
+            <div class="col-12 text-center mt-3 ">
+                <h3>DANH SÁCH NHÂN VIÊN</h3>
+            </div>
+            <div class="col-12 p-5 ">
+                <div class="mb-3">
+                    <label  class="form-label">Họ và tên</label>
+                    <input type="text" class="form-control" ng-model="data.name">
+                    <span class="text-danger " ng-show="validate.name">Họ và tên không được để trống</span>
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Địa chỉ</label>
+                    <input type="text" class="form-control" ng-model="data.address">
+                    <span class="text-danger " ng-show="validate.address">Địa chỉ không được để trống</span>
+                  </div>
+                  <div class="mb-3">
+                    <label  class="form-label">Giờ làm việc</label>
+                    <input type="text" class="form-control" ng-model="data.time">
+                    <span class="text-danger " ng-show="validate.time">Giờ làm việc không được để trống và số lớn hơn 0</span>
+                  </div>
+                  <div class="mb-3">
+                    <button class="btn btn-primary " type="button" ng-click="submit()">Lưu</button>
+                    <button class="btn btn-danger text-light " ng-click="huy()">Huỷ</button>
+                  </div>
+            </div>
+            <div class="col-12 p-5 ">
+                <table class="table" >
+                    <thead>
+                        <tr>
+                            <th>Họ và tên</th>
+                            <th>Địa chỉ</th>
+                            <th> Giờ làm việc</th>
+                            <th>Thưởng</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="(index, value) in listPost">
+                            <td>{{ value.name }}</td>
+                            <td>{{ value.address }}</td>
+                            <td>{{ value.time }}</td>
+                            <td > {{ checkThuong(value.time) }}</td>
+                            <td>
+                                <button class="btn btn-primary " ng-click="updatePost(value.id)">Sửa</button>
+                                <button class="btn btn-danger text-light " ng-click="deletePost(value.id)">Xoá</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="../lib/all.min.js"></script>
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        var myApp=angular.module("myApp",[])
+        myApp.controller("myController", function($scope, $http){
+            var api="http://localhost:3000/post/"
+            $http.get(api)
+                .then(function(response){
+                    $scope.listPost = response.data;
+                })
+                .then(function(error){
+                    console.log("Lỗi API");
+                })
+            
+            $scope.checkThuong = function (value) {
+                if (value < 150) {
+                    return "Không có thưởng";
+                } else if (value >= 150 && value <= 250) {
+                    return "3 triệu";
+                } else {
+                    return "5 triệu";
+                }
+            }
+
+            $scope.data={
+                name: "",
+                address: "",
+                time: ""
+            }
+
+            $scope.submit=function(){
+                if( checkEmpty()){
+                $http.post(api, angular.copy($scope.data))
+                    .then(function(response){
+                        alert("Thêm thành công")
+                    })
+                    .catch(function(error){
+                        console.log("Lỗi API");
+                    })
+                }
+            }
+           
+
+            $scope.deletePost =function(id){
+                let check= confirm("Bạn có muốn xoá không?")
+                if(check){
+                    $http.delete(api + id)
+                        .then(function(response){
+                            alert("Xoá thành công")
+                        })
+                        .catch(function(error){
+                            console.log("Lỗi API");
+                        })
+                }
+            }
+
+            $scope.validate = {
+                name: false,
+                address: false,
+                time: false
+            }
+            function checkEmpty(){
+                $scope.validate.name= $scope.data.name == "" ? true : false;
+                $scope.validate.address =$scope.data.address == "" ? true : false;
+                
+                if (($scope.data.time == "") || (isNaN($scope.data.time)) || !($scope.data.time > 0)) {
+                    $scope.validate.time = true
+                }
+                else {
+                    $scope.validate.time = false
+                }
+
+                if(!$scope.validate.name && !$scope.validate.address && !$scope.validate.time ){
+                    return true
+                }else {
+                    return false
+                }
+            }
+
+            $scope.huy=function(){
+                $scope.data={
+                    name: "",
+                    address: "",
+                    time: ""
+        }
+            }
+           
+        })
+    </script>
+</body>
+</html>

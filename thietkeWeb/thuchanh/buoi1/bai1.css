@@ -1,0 +1,88 @@
+.container{
+    width: 100% auto;
+    margin: 0;
+}
+header{
+   display: flex;
+   text-align: center;
+   background-color: rgb(33, 33, 33);
+   color: aliceblue;
+}
+.logo{
+    padding: 7px;
+}
+.content{
+    padding: 20px;
+}
+nav{
+    background-color: rgba(219, 219, 77, 0.596);
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+}
+.menu{
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+}
+.menu>li{
+    display: inline-block;
+    text-transform: uppercase;
+}
+.menu>li>a{
+    text-decoration: none;
+    color: black;
+    padding: 0 15px;
+}
+main{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+.main-left{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    
+}
+article{
+    display: inline-block;
+    width: 120%;
+}
+article .col{
+    display: inline-flex;
+    border: 1px solid orange;
+    padding: 20px;
+    margin: 15px;
+}
+article .one{
+    padding: 15px;
+}
+aside{
+    margin-bottom: 20px;
+    margin-left: 110px;
+    margin-top: 30px;
+    border: 1px solid orange;
+}
+.title{
+    background-color: rgb(58, 198, 58);
+    color: aliceblue;
+    text-align: center;
+    padding: 10px;
+}
+form{
+    padding: 5px 20px;
+}
+button{
+    background-color: red;
+    color: aliceblue;
+    text-align: right;
+}
+footer{
+    background-color: black;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <input type="text" placeholder="Tên" ng-model="data.username">
+        <input type="text" placeholder="pass" ng-model="data.password">
+        <input type="text" placeholder="Name" ng-model="data.name">
+        <button ng-click="register()">Register</button>
+    </div>
+    
+    <script src="../lib/angular.min.js"></script>
+    <script>
+        var myApp=angular.module("myApp",[])
+        myApp.controller("myController", function($scope, $http){
+            var api="http://localhost:3000/users/"
+            $scope.data={
+                username: "",
+                password: "",
+                name: "",
+                role: 2
+            }
+            $scope.register = function(){
+                $http.post(api, $scope.data)
+                    .then(function(response){
+                        alert("Đăng ký thành công")
+                       window.location.href = "login.html"
+                       
+                    })
+            }
+        })
+    </script>
+</body>
+</html>

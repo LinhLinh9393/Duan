@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="/lib/bootstrap.min.css">
+     <script src="/lib/bootstrap.bundle.min.js"></script>
+     <script src="/lib/font-fontawesome-ae333ffef2.js"></script>
+     <script src="/lib/angular.min.js"></script>
+     <script src="/lib/angular-route.js"></script>
+     <script src="/lib/angular-locale_vi-vn.js"></script>
+</head>
+
+<body ng-app="myApp">
+     <div class="container" ng-controller="bh">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+               <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Navbar</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                         aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                   <a class="nav-link active" aria-current="page" href="#!/">Trang chủ</a>
+                              </li>
+                              <li class="nav-item">
+                                   <a class="nav-link" href="#!cart">Giỏ hàng</a>
+                              </li>
+
+                              </li>
+                              <li class="nav-item">
+                                   <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                              </li>
+                         </ul>
+                         <form class="d-flex" role="search">
+                              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                              <button class="btn btn-outline-success" type="submit">Search</button>
+                         </form>
+                    </div>
+               </div>
+          </nav>
+          <main class="row">
+               <article class="col-12 bg-light ">
+                    <ng-view>
+
+                    </ng-view>
+
+               </article>
+          </main>
+     </div>
+</body>
+
+</html>
+<script>
+     var app = angular.module("myApp", ['ngRoute']);
+     app.config(function ($routeProvider) {
+          $routeProvider
+               .when("/", {
+                    templateUrl: "home.html"
+               })
+               .when("/cart", {
+                    templateUrl: "cart.html"
+               })
+     });
+     app.controller('bh', function ($scope, $http) {
+          $scope.danhSach = [];
+          $http.get('http://localhost:3000/san-pham').then(function (response) {
+               $scope.danhSach = response.data
+          })
+          $scope.cart = [];
+          $scope.tongsoluong = function () {
+               var tsl = 0;
+               for (i = 0; i < $scope.cart.length; i++) {
+                    tsl += $scope.cart[i].soluong;
+               }
+               return tsl;
+          }
+          $scope.tongtien = function () {
+               var tsl = 0;
+               for (i = 0; i < $scope.cart.length; i++) {
+                    tsl += $scope.cart[i].soluong * $scope.cart[i].giaBan;
+               }
+               return tsl;
+          }
+          $scope.xoa = function (index) {
+               $scope.cart.splice(index, 1)
+          }
+          $scope.themvaogio = function (item) {
+               var index = $scope.cart.findIndex(p => p.id == item.id);
+               if (index >= 0) {
+                    $scope.cart[index].soluong++;
+                    console.log($scope.cart[index].soluong);
+               } else {
+                    var itemCart = {
+                         id: item.id,
+                         ten: item.ten,
+                         anh: item.anh,
+                         giaBan: item.giaBan,
+                         soluong: 1
+                    }
+                    $scope.cart.push(itemCart);
+               }
+               console.log($scope.cart);
+          }
+          
+     })
+</script>

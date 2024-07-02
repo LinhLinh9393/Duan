@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+    <div ng-include="'layouts/_header.html'"></div>
+    <div ng-view></div>
+    <div ng-include="'layouts/_footer.html'"></div>
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script src="../lib/all.min.js"></script>
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/listController.js"></script>
+    <script src="controllers/chiTietController.js"></script>
+    <script src="controllers/giohangController.js"></script>
+    <script>
+         var myApp=angular.module("myApp",['ngRoute'])
+        myApp.config(function($routeProvider){
+            $routeProvider
+                .when("/home",{
+                    templateUrl: "views/home.html",
+                    controller: homeController 
+                })
+                .when("/login",{
+                    templateUrl: "../login.html",
+                })
+                .when("/register",{
+                    templateUrl: "../register.html",
+                })
+                .when("/list-product",{
+                    templateUrl: "views/list.html",
+                    controller: listController
+                })
+                .when("/chitietsp/:id",{
+                    templateUrl: "views/chitiet.html",
+                    controller: chiTietController
+                })
+                .when("/giohang",{
+                    templateUrl: "views/giohang.html",
+                    controller: giohangController
+                })
+                .otherwise({
+                    redirectTo: "/home"
+                })
+        })
+    </script>
+    <script src="controllers/HeaderController.js"></script>
+</body>
+</html>

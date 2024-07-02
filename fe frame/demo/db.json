@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "3a14",
+      "name": "sfsd",
+      "password": "đá",
+      "email": "fsdf",
+      "chuc_nang": "1",
+      "phone": "234234"
+    },
+    {
+      "id": "5e67",
+      "name": "sdfsdf",
+      "password": "fwer",
+      "email": "rrwer",
+      "chuc_nang": "2",
+      "phone": "234"
+    },
+    {
+      "id": "2a4a",
+      "name": "fdaf",
+      "password": "",
+      "email": "",
+      "chuc_nang": "1",
+      "phone": ""
+    },
+    {
+      "id": "4137",
+      "name": "rẻưerwerwerwerwer",
+      "password": "ưqf",
+      "email": "sfsd",
+      "chuc_nang": "2",
+      "phone": "sdfsd"
+    },
+    {
+      "id": "cdc0",
+      "name": "fwrewewrwerwe",
+      "password": "fewf",
+      "email": "adsad@gmail.com",
+      "chuc_nang": "1",
+      "phone": "gdg"
+    },
+    {
+      "id": "820a",
+      "name": "df4235435345",
+      "password": "èweffs",
+      "email": "ừew@gmail.com",
+      "chuc_nang": "1",
+      "phone": "2432442342"
+    }
+  ]
+}

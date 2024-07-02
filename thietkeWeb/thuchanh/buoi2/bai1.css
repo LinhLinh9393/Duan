@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    background: rgb(207,60,236);
+    background: linear-gradient(109deg, rgba(207,60,236,1) 0%, rgba(208,75,228,1) 17%, rgba(136,123,237,1) 67%, rgba(0,212,255,1) 100%);
+    height: 50px;
+    border-radius: 10px;
+    font-size: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header a{
+    text-decoration: none;
+    color: white;
+    font-family: abc;
+}
+@font-face {
+    font-family: abc;
+    src: url('DancingScript-VariableFont_wght.ttf')
+}
+
+.block1, .block2{
+    width: 450px;
+    min-height: 300px; 
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+    float: left;
+}
+
+.block1 img, .block2 img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.get-location{
+    padding: 15px 20px;
+    margin: 20px;
+}
+.get-location svg{
+    color: red;
+    font-size: 35px;
+}

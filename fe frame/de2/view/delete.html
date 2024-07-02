@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-center">Xoá</h1>
+    <div class="mt-3 p-5 ">
+        <div class="mb-3">
+            <label for="">Name</label>
+            <input type="text" class="form-control" ng-model="data.name">
+        </div>
+        <div class="mb-3">
+            <label for="">pass</label>
+            <input type="text" class="form-control" ng-model="data.pass">
+        </div>
+        <div class="mb-3">
+            <label for="">email</label>
+            <input type="text" class="form-control" ng-model="data.email">
+        </div>
+        <div class="mb-3">
+            <label for="">Thể loại</label>
+            <select name="" id="" class="form-control" ng-model="data.theLoai">
+                <option value="">-- Chọn thể loại --</option>
+                <option value="Giám đốc"> -- Giám đốc -- </option>
+                <option value="Nhân viên"> -- Nhân viên -- </option>
+                <option value="Khách hàng"> -- Khách hàng -- </option>
+            </select>
+        </div>
+        <span ng-show="validate.theLoai">Dữ liệu không được để trống</span>
+
+        <div class="mb-3">
+            <label for="">Phone</label>
+            <input type="text" class="form-control" ng-model="data.phone">
+        </div>
+        <div class="mb-3">
+            <label for="">Date</label>
+            <input type="text" class="form-control" ng-model="data.date">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" ng-click="delete()">Xoá</button>
+            <a href="#!/list"><button class="btn btn-danger">Quay lại</button></a>
+        </div>
+    </div>
+</body>
+</html>

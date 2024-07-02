@@ -1,0 +1,49 @@
+<div ng-controller="header">
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+               <a class="navbar-brand px-2 logo" href="index.html">
+                    <img src="/img/logo.png" alt="">
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                         <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="#!/">Trang chủ</a>
+                         </li>
+                         <li class="nav-item">
+                              <a class="nav-link" href="#!shop-search">Sản phẩm</a>
+                         </li>
+                         <li class="nav-item">
+                              <a class="nav-link" href="#!shop-cart">Giới thiệu</a>
+                         </li>
+                         <li class="nav-item">
+                              <a class="nav-link" href="#">Liên hệ</a>
+                         </li>
+                    </ul>
+                    <ul class="navbar-nav mx-5">
+                         <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="false">
+                                   <i class="fa-solid fa-user"></i> <span> {{ nameAccount }}</span>
+                              </a>
+                              <ul class="dropdown-menu">
+                                   <li ng-hide="isLoggedIn"><a class="dropdown-item" href="#!login">Đăng nhập</a></li>
+                                   <li ng-hide="isLoggedIn"><a class="dropdown-item" href="#!register">Đăng kí</a></li>
+                                   <li ng-show="isLoggedIn"><a class="dropdown-item" href="">{{ nameAccount }}</a></li>
+                                   <li ng-show="isLoggedIn && isAdmin"><a class="dropdown-item"
+                                             href="/Admin/index.html">Trang Admin</a></li>
+                                   <li ng-show="isLoggedIn"><a class="dropdown-item" type="button"
+                                             ng-click="logout()">Đăng xuất</a></li>
+                              </ul>
+
+
+                         </li>
+                    </ul>
+               </div>
+          </div>
+     </nav>
+</div>

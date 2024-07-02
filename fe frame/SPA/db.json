@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "user1",
+      "password": "12345",
+      "name": "User1 Test",
+      "role": "1"
+    },
+    {
+      "id": "033d",
+      "username": "user2",
+      "password": "123456",
+      "name": "a",
+      "role": 2
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "nameSP": "Iphone",
+      "priceSP": "40000000",
+      "imageSP": "https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-tim-thumb-600x600.jpg"
+    }
+  ]
+}

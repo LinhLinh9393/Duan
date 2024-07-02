@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/all.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <style>
+        .navbar {
+            background-color:  rgb(119, 110, 239);
+            color: white;
+        }
+
+        /* .col-2{
+        background-color: rgb(241, 117, 117);
+        height: 100vh;
+        
+    } */
+    </style>
+</head>
+
+<body>
+    <div class="contaner">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid ms-3 ">
+                <img src="../img/logo.png" alt="" srcset="" width="80px">
+                <a class="navbar-brand text-light ms-3" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="list.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Danh mục
+                            </a>
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="list.html">Chanel</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="list.html">Dior</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="list.html">Perfume</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="list.html">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="admin.html">Admin</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                    </form>
+                    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw "></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div class="col-12">
+                <div class="card text-bg-dark">
+                    <img src="../img/banner (1).jpg" class="card-img" alt="..." style="height: 450px;">
+                    <div class="card-img-overlay text-center mt-5  " style="font-size: 25px;">
+                        <h3 class="card-title">Nước hoa</h3>
+                        <p class="card-text">Nước hoa chính hãng; hương thơm sang trong, quyến rũ mang lại cho khách
+                            hàng sản phẩm hài lòng nhất.</p>
+                        <p class="card-text"><small>Hãy mau xem các loại nước hoa với nhiều mùi hương khác nhau.</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2 p-2 ">
+            <div class="col-3">
+                <ul class="list-group">
+                    <li class="list-group-item active"><i class="fa-solid fa-bars"></i> Danh mục</li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Chanel
+                        <span class="badge text-bg-primary rounded-pill">10</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Dior
+                        <span class="badge text-bg-primary rounded-pill">9</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Perfume
+                        <span class="badge text-bg-primary rounded-pill">11</span>
+                    </li>
+                </ul>
+                <hr>
+                <div class="col-12">
+                    <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Search">
+                        <div class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    </div>
+                </div>
+                <hr>
+                <button class="btn btn-danger  border ">Flash sale</button>
+                <hr>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+                        <label class="form-check-label" for="firstCheckbox">On sale</label>
+                    </li>
+                    <li class="list-group-item">
+                        <input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox">
+                        <label class="form-check-label" for="secondCheckbox">In stock</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-9 ">
+                <div class="row">
+                    <div class="col-9">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="#">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
+                            </ol>
+                          </nav>
+                    </div>
+                    <div class="col-3 justify-content-end">
+                        <select class="form-select justify-content-end">
+                            <option selected>Tất cả</option>
+                            <option value="1">Chanel</option>
+                            <option value="2">Dior</option>
+                            <option value="3">Perfume</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row me-4 ms-3 ">
+                    <div class="col-xl-4  p-3 col-sm-6 ">
+                        <div class="card">
+                            <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="text d-flex ">
+                                    <h5 class="card-title">Nước hoa </h5>
+                                    <p class="bg-danger text-light badge ms-3 ">Hot sale</p>
+                                </div>
+                                <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+                                <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+                                <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 p-3 col-sm-6">
+                        <div class="card">
+                            <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nước hoa</h5>
+                                <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+                                <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+                                <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 p-3 col-sm-6">
+                        <div class="card">
+                            <img src="../img/tải xuống (2).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nước hoa</h5>
+                                <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+                                <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+                                <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row me-3 ms-3 ">
+                    <div class="col-xl-4  p-3 col-sm-6 ">
+                        <div class="card">
+                            <img src="../img/tải xuống (3).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="text d-flex ">
+                                    <h5 class="card-title">Nước hoa </h5>
+                                    <p class="bg-danger text-light badge ms-3 ">Hot sale</p>
+                                </div>
+                                <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+                                <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+                                <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 p-3 col-sm-6">
+                        <div class="card">
+                            <img src="../img/tải xuống (3).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nước hoa</h5>
+                                <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+                                <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+                                <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 p-3 col-sm-6">
+                        <div class="card">
+                            <img src="../img/tải xuống (3).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nước hoa</h5>
+                                <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+                                <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+                                <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row me-4 ms-3 ">
+                    <div class="col-xl-4  p-3 col-sm-6 ">
+                        <div class="card">
+                            <img src="../img/tải xuống (4).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <div class="text d-flex ">
+                                    <h5 class="card-title">Nước hoa </h5>
+                                    <p class="bg-danger text-light badge ms-3 ">Hot sale</p>
+                                </div>
+                                <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+                                <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+                                <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 p-3 col-sm-6">
+                        <div class="card">
+                            <img src="../img/tải xuống (4).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nước hoa</h5>
+                                <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+                                <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+                                <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 p-3 col-sm-6">
+                        <div class="card">
+                            <img src="../img/tải xuống (4).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Nước hoa</h5>
+                                <p class="card-text">Nước hoa chính hãng thơm nhất mọi thời đại.</p>
+                                <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;">$14000</p>
+
+                                <a href="chitietsp.html" class="btn btn-primary">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav aria-label="Page navigation example ">
+                    <ul class="pagination  justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <br>
+        <div class="row" style=" background-color:  rgb(119, 110, 239);">
+            <div class="col-12 text-black p-2 d-flex ">
+                <div class="col-5 ms-3">
+                    <div class="d-flex justify-content-start mt-2 text-light  ">
+                        <h4>Thế giới nước hoa</h4>
+                    </div>
+                </div>
+                <div class="col-6 s">
+                    <div class="d-flex flex-row-reverse text-light ">
+                        <div class="p-2"><i class="fa-brands fa-twitter"></i></div>
+                        <div class="p-2"><i class="fa-brands fa-youtube"></i></div>
+                        <div class="p-2"><i class="fa-brands fa-facebook"></i></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-3 ">
+                <div class="col-5">
+                    <div class="alert alert-success bg-light ms-4" role="alert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <p>Nước hoa chính hãng đem đến sự mới lạ dành cho khách hàng với nhiều mùi hương tinh tế, sang
+                            trọng .</p>
+                        <hr>
+                        <p class="mb-0">Hãy nhanh tay đến mua hàng của chúng tôi.</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="link_footer">
+                        <div class="item_link_footer">
+                            <h4 class="tt_footer text-uppercase text-light ">Hỗ trợ khách hàng</h4>
+                        </div>
+                        <div class="item_link_footer">
+                            <div class="txt_color_2 text-light">Hotline: <strong>1800 6324</strong></div>
+                            <p class="text text-light ">(miễn phí , 08-22h kể cả T7, CN)</p>
+                        </div>
+                        <div class="item_link_footer"><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Các câu hỏi thường gặp</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Gửi yêu cầu hỗ trợ</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Hướng dẫn đặt hàng</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Phương thức vận chuyển</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Chính sách đổi trả</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4  justify-content-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d502871.69171304646!2d105.37460247632978!3d10.042823600000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a062a7f9885625%3A0xec4ad2e7686bfb0b!2zVGjhur8gR2nhu5tpIE7GsOG7m2MgSG9hIC0gTmd1eeG7hW4gVHLDo2k!5e0!3m2!1svi!2s!4v1710817613777!5m2!1svi!2s"
+                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/all.min.js"></script>
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

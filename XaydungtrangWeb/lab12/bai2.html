@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai2 lab12</title>
+    <style>
+        #tong{
+            width: 1000px;
+            height: 500px;
+        }
+        #video{
+            width: 750px;
+            height: 500px;
+            background-color: yellow;
+            margin-right: 10px;
+            float: left;
+        }
+        #anh a img{
+            width: 200px;
+            height: 154px;
+            margin-bottom: 20px;
+            float: left;
+        }
+        iframe[name=page]{
+            width: 100%;
+            min-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tong">
+        <div id="video">
+            <iframe src="video/video1.mp4" name="page" scroliling="auto" framborer="0" ></iframe>
+        </div>
+        <div id="anh">
+            <a href="video/video1.mp4" target="page"><img src="img/1.jpg"></a>
+            <a href="video/video2.mp4" target="page"><img src="img/2.jpg"></a>
+            <a href="video/video3.mp4" target="page"><img src="img/sinhvien.jpg"></a>
+        </div>
+    </div>
+</body>
+</html>

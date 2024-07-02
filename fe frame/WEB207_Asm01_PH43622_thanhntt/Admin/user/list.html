@@ -1,0 +1,86 @@
+<h3 class="m-3">Danh sách sản phẩm</h3>
+<div class="container d-flex justify-content-end  my-2">
+     <a type="button" href="#!create-product" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tạo
+          mới</a>
+</div>
+<div class="m-3">
+     <span>Lọc sản phẩm</span>
+     <button ng-click="locDanhMuc()" class="btn btn-secondary rounded-pill ">Tất cả</button>
+     <button ng-click="locDanhMuc(item.id)" ng-repeat="item in danhSachDanhMuc" class="btn btn-primary rounded-pill ">{{ item.ten }}</button>
+</div>
+<table class="table table-bordered ">
+     <thead>
+          <tr>
+               <th>ID</th>
+               <th>Ảnh</th>
+               <th>Tên sản phẩm</th>
+               <th>Giá bán</th>
+               <th>Giá niêm yết</th>
+               <th>Danh mục</th>
+               <!-- <th>Trạng thái</th> -->
+               <th>Tương tác</th>
+          </tr>
+     </thead>
+     <tbody>
+          <tr ng-repeat="(index, value) in danhSachUser">
+               <td>{{ value.id }}</td>
+               <td>
+                    <div class="border rounded bg-light d-flex justify-content-center overflow-hidden align-items-center "
+                         style="width: 80px ;height: 80px;">
+                         <img ng-src="{{ value.anh }}" alt="" class="mh-100 mw-100">
+                    </div>
+               </td>
+               <td>{{ value.hoTen }}</td>
+               <td>{{ value.user }}</td>
+               <td>{{ value.email }}</td>
+               <td>{{ value.password }}</td>
+               <!-- <td><span class="badge bg-success">Còn hàng</span>
+               </td> -->
+               <td style="width: 1px;" class="text-nowrap">
+                    <div class="d-grid gap-2 d-md-block">
+                         <a class="btn btn-primary sm" href="#!detail-product/{{ value.id }}" type="button"> <i
+                                   class="fa-solid fa-eye"></i>
+                              Xem</a>
+                         <a class="btn btn-warning sm" href="#!edit-product/{{ value.id }}" type="button"><i
+                                   class="fa-solid fa-pen-to-square"></i> Sửa</a>
+                         <a class="btn btn-danger sm" type="button" ng-click="submitDel( value.id )"-cl > <i
+                                   class="fa-solid fa-trash"></i>
+                              Xóa</a>
+                    </div>
+               </td>
+          </tr>
+         
+        
+     </tbody>
+</table>
+<div class="d-flex justify-content-center ">
+     <ul class="pagination ">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+     </ul>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="myModal">
+     <div class="modal-dialog">
+          <div class="modal-content">
+               <!-- Modal Header -->
+               <div class="modal-header">
+                    <h4 class="modal-title">Xác nhận xóa</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+                    Bạn có chắn chắn xóa không ?
+               </div>
+               <!-- Modal footer -->
+               <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-danger">Xóa</button>
+               </div>
+          </div>
+     </div>
+</div>

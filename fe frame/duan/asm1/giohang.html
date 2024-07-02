@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/all.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <style>
+        .navbar {
+            background-color: rgb(119, 110, 239);
+            color: white;
+        }
+
+        /* .col-2{
+                background-color: rgb(241, 117, 117);
+                height: 100vh;
+                
+            } */
+    </style>
+</head>
+
+<body>
+    <div class="contaner">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid ms-3 ">
+                <img src="../img/logo.png" alt="" srcset="" width="80px">
+                <a class="navbar-brand text-light ms-3" href="index.html">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="list.html" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Danh mục
+                            </a>
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="list.html">Chanel</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="list.html">Dior</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="list.html">Perfume</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="list.html">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="admin.html">Admin</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+
+                    </form>
+                    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw "></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="container mt-3" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+            </ol>
+        </nav>
+        <div class="container mb-5">
+            <div class="border-0 border-bottom my-3">
+                <h1 class="text-center ">Giỏ hàng</h1>
+            </div>
+             <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col" class="text-center">Tên sản phẩm</th>
+                        <th scope="col" class="text-center">Ảnh sản phẩm</th>
+                        <th scope="col" class="text-center">Giá sản phẩm</th>
+                        <th scope="col" class="text-center">Số lượng</th>
+                        <th scope="col" class="text-center">Tổng</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in cart">
+                        <td>1</td>
+                        <td class="text-center">
+                            <img ng-src="" alt="" class="img-fluid"
+                                style="max-height: 50px;">
+                        </td>
+                        <td class="text-center">jknfskja</td>
+                        <td class="text-center">ssvdj</td>
+                        <td class="text-center ">
+                            <input class="form-control ms-5" min="1" style="width: 100px;" type="number"
+                                ng-model="item.cart[0].soluong" ng-blur="updateCartItem(item)">
+                        </td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">
+                            <button type="button" class="btn" ng-click="submitDel(item.id)">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="text-center" colspan="4"><strong>Tổng</strong></td>
+                        <td class="text-center">0</td>
+                        <td class="text-center">0</td>
+                        <td class="text-center"></td>
+        
+                    </tr>
+                </tfoot>
+        
+            </table>
+            <div class="d-flex ">
+                <div class="col-6 border bg-body-secondary shadow">
+                    <h5 class="m-3">Tổng tiền</h5>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th scope="row">Số lượng</th>
+                            <td>{{ tongsoluong() }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tổng</th>
+                            <td>{{ tongtien() + 30000 }}</td>
+                        </tr>
+                    </table>
+                    <div class="d-flex justify-content-end m-3">
+                        <a href="#!checkout" class="btn btn-success " type="submit" >Xác nhận đặt hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row  text-light " style=" background-color: rgb(119, 110, 239); ">
+            <div class="col-xl-12 text-black p-2 d-flex ">
+                <div class="col-5 ms-3">
+                    <div class="d-flex justify-content-start mt-2 text-light  ">
+                        <h4>Thế giới nước hoa</h4>
+                    </div>
+                </div>
+                <div class="col-6 ">
+                    <div class="d-flex flex-row-reverse text-light ">
+                        <div class="p-2"><i class="fa-brands fa-twitter"></i></div>
+                        <div class="p-2"><i class="fa-brands fa-youtube"></i></div>
+                        <div class="p-2"><i class="fa-brands fa-facebook"></i></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="container d-flex justify-content-between px-5 py-4 border-1 border-top border-black  ">
+                    <div>
+                        <h3 class="fw-bold">Địa chỉ.</h3>
+                        <p>400 University Drive Suite 200 Coral Gables,<br>
+                            FL 33134 USA</p>
+                    </div>
+                    <div class="footer">
+                        <ul class="nav flex-column text-center">
+                            <h4>Links</h4>
+                            <li class="nav-item">
+                                <a class="nav-link active  text-light " aria-current="page" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-light " href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-light " href="#">Link</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer">
+                        <ul class="nav flex-column text-center">
+                            <h4>Help</h4>
+                            <li class="nav-item">
+                                <a class="nav-link active  text-light " aria-current="page" href="#">Active</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link  text-light " href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light " href="#">Link</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer">
+                        <h4>Newsletter</h4>
+                        <div class="formft">
+                            <input type="email" class="border-0 border-bottom border-black" id="emailft"
+                                placeholder="name@example.com">
+                            <input type="submit" class="border-0 border-bottom border-black" id="btnEmail">
+                        </div>
+                    </div>
+                </div>
+                <div class=" border-top border-black m-3">
+                    <p class="py-3 px-2">2023 furino. All rights reverved</p>
+                </div>
+            </div>
+            <div class="row mt-3 ">
+                <div class="col-xl-4 ms-2 ">
+                    <!-- <div class="alert alert-success bg-light ms-4" role="alert"> -->
+                    <!-- <h4 class="alert-heading">Well done!</h4>
+            <p>Nước hoa chính hãng đem đến sự mới lạ dành cho khách hàng với nhiều mùi hương tinh tế, sang trọng .</p>
+            <hr>
+            <p class="mb-0">Hãy nhanh tay đến mua hàng của chúng tôi.</p>
+          </div> -->
+                    <h2>Nước hoa chính hãng</h2>
+                    <img src="../img/tải xuống (1).jpg" alt="">
+                </div>
+                <div class="col-xl-3">
+                    <div class="link_footer">
+                        <div class="item_link_footer">
+                            <h4 class="tt_footer text-uppercase text-light ">Hỗ trợ khách hàng</h4>
+                        </div>
+                        <div class="item_link_footer">
+                            <div class="txt_color_2 text-light">Hotline: <strong>1800 6324</strong></div>
+                            <p class="text text-light ">(miễn phí , 08-22h kể cả T7, CN)</p>
+                        </div>
+                        <div class="item_link_footer"><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Các câu hỏi thường gặp</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Gửi yêu cầu hỗ trợ</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Hướng dẫn đặt hàng</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Phương thức vận chuyển</a>
+                        </div>
+                        <div class="item_link_footer "><a rel="nofollow" href="" target="_blank"
+                                class="txt_link_hasaki text-light ">Chính sách đổi trả</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4  justify-content-center">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d502871.69171304646!2d105.37460247632978!3d10.042823600000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a062a7f9885625%3A0xec4ad2e7686bfb0b!2zVGjhur8gR2nhu5tpIE7GsOG7m2MgSG9hIC0gTmd1eeG7hW4gVHLDo2k!5e0!3m2!1svi!2s!4v1710817613777!5m2!1svi!2s"
+                        width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../lib/all.min.js"></script>
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

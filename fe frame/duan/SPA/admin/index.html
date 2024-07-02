@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/all.min.css">
+</head>
+
+<body ng-app="myApp">
+    <div ng-include="'layouts/_header.html'"></div>
+    <div ng-view></div>
+
+    <div ng-include="'layouts/_footer.html'"></div>
+
+
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script src="../lib/all.min.js"></script>
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+    <script src="controllers/ListProductController.js"></script>
+    <script src="controllers/AddProductController.js"></script>
+    <script src="controllers/UpdateProductController.js"></script>
+    <script src="controllers/UserController.js"></script>
+    <script src="controllers/donhangController.js"></script>
+    <script src="controllers/chitetDHController.js"></script>
+    <script src="controllers/updateDHController.js"></script>
+    <script src="controllers/danhmuc.js"></script>
+    <script>
+        var myApp = angular.module("myApp", ['ngRoute'])
+        myApp.config(function ($routeProvider) {
+            $routeProvider
+                .when("/home", {
+                    templateUrl: "views/home.html",
+                    // controller: ListProductController 
+                })
+                .when("/list-product", {
+                    templateUrl: "views/list-product.html",
+                    controller: ListProductController 
+                })
+                .when("/add-product", {
+                    templateUrl: "views/add-product.html",
+                    controller: AddProductController
+                })
+                .when("/update-product/:id", {
+                    templateUrl: "views/update-product.html",
+                    controller: UpdateProductController
+                })
+                .when("/list-user",{
+                    templateUrl: "views/list-user.html",
+                    controller: UserController
+                })
+                .when("/add-user", {
+                    templateUrl: "views/add-user.html",
+                    controller: UserController
+                })
+                .when("/update-user/:id", {
+                    templateUrl: "views/update-user.html",
+                    controller: UserController
+                })
+                // .when("/danhmuc",{
+                //     templateUrl: "views/danhmuc.html",
+                //     controller: danhmuc
+                // })
+                // .when("/addDM", {
+                //     templateUrl: "views/addDM.html",
+                //     controller: danhmuc
+                // })
+                // // .when("/update-user/:id", {
+                // //     templateUrl: "views/update-user.html",
+                // //     controller: UserController
+                // // })
+                .when("/donhang",{
+                    templateUrl: "views/donhang.html",
+                    controller: donhangController
+                })
+                .when("/chitietDH/:id",{
+                    templateUrl: "views/chitietDH.html",
+                    controller: chitietDHController
+                })
+                .when("/updateDonhang/:id",{
+                    templateUrl: "views/updateDonhang.html",
+                    controller: updateDHController
+                })
+                .when("/login",{
+                    templateUrl: "../login.html",
+                })
+                .when("/register",{
+                    templateUrl: "../register.html",
+                })
+                .otherwise({
+                    redirectTo: "/home"
+                })
+        })
+    </script>
+    <script src="controllers/HeaderController.js"></script>
+    
+</body>
+
+</html>

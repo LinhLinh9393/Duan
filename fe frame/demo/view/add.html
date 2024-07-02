@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Thêm user</h1>
+    <div>
+        <label for="">Tên người dùng</label>
+        <input type="text" class="form-control " ng-model="data.name">
+        <span class="text-danger " ng-show="validate.name">Dữ liệu cần phải nhập </span>
+        <span class="text-danger " ng-show="regex.name">tối thiếu 10 kí tự nhỏ hơn 50 kí tự </span>
+    </div>
+    <div>
+        <label for="">Mật khẩu</label>
+        <input type="password" class="form-control " ng-model="data.password">
+        <span class="text-danger " ng-show="validate.password">Dữ liệu cần phải nhập </span>
+
+    </div>
+    <div>
+        <label for="">Email</label>
+        <input type="text" class="form-control " ng-model="data.email">
+        <span class="text-danger " ng-show="validate.email">Dữ liệu cần phải nhập </span>
+        <span class="text-danger " ng-show="regex.email">Sai định dạng </span>
+
+        
+    </div>
+    <div>
+        <label for="">Chức năng</label>
+        <!-- <select name="" id="" ng-model="data.chuc_nang" class="form-select ">
+            <option value="Giám đốc">Giám đốc</option>
+            <option value="Nhân viên">Nhân viên</option>
+            <option value="Khách hàng">Khách hàng</option>
+        </select> -->
+        <select name="" id="" ng-model="data.chuc_nang" class="form-select ">
+           
+            <option value="1">Giám đốc</option>
+            <option value="2">Nhân viên</option>
+            <option value="3">Khách hàng</option>
+        </select>
+    </div>
+    <div>
+        <label for="">Số điện thoại</label>
+        <input type="text" class="form-control " ng-model="data.phone">
+        <span class="text-danger " ng-show="validate.phone">Dữ liệu cần phải nhập</span>
+        <span class="text-danger " ng-show="regex.phone">Sai định dạng </span>
+        <span class="text-danger " ng-show="so.phone">Cần phải là số </span>
+
+
+    </div>
+    <div class="text-center ">
+        <button class="btn btn-success " ng-click="add()">Thêm</button>
+        <button class="btn btn-dark " ng-click="reset()">Resset</button>
+        <a class="btn btn-warning " href="#/list-user">Quay lại</a>
+    </div>
+</div>

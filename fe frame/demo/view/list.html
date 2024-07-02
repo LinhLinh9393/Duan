@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>Danh sách user</h1>
+    <a class="btn btn-success " href="#!/user/add" style="float: right;">Thêm người dùng </a>
+    <table class="table ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Chức năng</th>
+                <th>Phone</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="value in listUser">
+                <td>{{value.id}}</td>
+                <td>{{value.name}}</td>
+                <td>{{value.password}}</td>
+                <td>{{value.email}}</td>
+                <!-- chức năng  -->
+      
+                <td ng-if="value.chuc_nang == '1'">Giám đốc</td>
+                <td ng-if="value.chuc_nang == '2'">Nhân viên</td>
+                <td ng-if="value.chuc_nang == '3'">Khách hàng</td>
+                <!-- ..  -->
+                <td>{{value.phone}}</td>
+                <td>
+                    <a class="btn btn-primary " href="#!/detail/user/{{value.id}}">Xem chi tiết</a>
+                    <a class="btn btn-warning  " href="#!/update/user/{{value.id}}">Sửa</a>
+                    <a class="btn btn-danger  " href="#!/delete/user/{{value.id}}">Xóa</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

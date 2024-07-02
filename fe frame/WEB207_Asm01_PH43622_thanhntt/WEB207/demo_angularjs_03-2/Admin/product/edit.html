@@ -1,0 +1,31 @@
+<!-- 1. Tiêu đề trang -->
+<h3 class="text-center">Trang chỉnh sửa</h3>
+<form action="">
+     <div class="m-3">
+          <label for="" class="form-label ">ID</label>
+          <input type="text" class="form-control" ng-model="product.id">
+     </div>
+     <div class="m-3">
+          <label for="" class="form-label ">Name</label>
+          <input type="text" class="form-control" ng-model="product.ten">
+     </div>
+     <div class="m-3">
+          <label for="" class="form-label ">Ảnh</label>
+          <input type="text" class="form-control" ng-model="product.anh">
+     </div>
+     <div class="m-3">
+          <label for="" class="form-label ">Danh mục</label>
+          <select name="" id="" class="form-control" ng-model="product.tenDanhMuc">
+               <option value="01">Danh mục 01</option>
+               <option value="02">Danh mục 02</option>
+               <option value="Áo khoác nam">Áo khoác nam</option>
+          </select>
+     </div>
+     <div class="mt-3 text-center">
+          <a type="submit" class="btn btn-secondary" href="#!list-product">Quay lại</a>
+          <a type="submit" class="btn btn-warning" ng-click="onClickSubmit()">Lưu</a>
+     </div>
+     <div class="alert alert-danger m-3" ng-if="formValidate.trangThai === false">
+          <strong>Form không hợp lệ!</strong><br> {{ formValidate.noiDung }}
+     </div>
+</form>

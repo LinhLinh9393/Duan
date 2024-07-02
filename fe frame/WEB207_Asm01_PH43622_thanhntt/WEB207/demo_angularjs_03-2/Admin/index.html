@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Nhúng thư viện bootstrap -->
+    <link rel="stylesheet" href="/lib/bootstrap.min.css">
+    <script src="/lib/bootstrap.bundle.min.js"></script>
+    <script src="/lib/font-fontawesome-ae333ffef2.js"></script>
+    <script src="/lib/angular.min.js"></script>
+    <script src="/lib/angular-route.js"></script>
+
+    <!-- Cấu hình route cho web admin -->
+    <!-- Quản lí sản phẩm -->
+    <!-- 1. Trang danh sách  "/san-pham/danh-sach" -->
+    <!-- 2. Trang tạo mới | "/san-pham/tao-moi"-->
+    <!-- 3. Trang chi tiết | /san-pham/chi-tiet/:id" -->
+    <!-- 2. Trang chỉnh sửa | /san-pham/chinh-sua/:id"-->
+    <!-- Quản lí danh mục -->
+    <!-- 1. Trang danh sách  "/danh-muc/danh-sach" -->
+    <!-- 2. Trang tạo mới | "/danh-muc/tao-moi"-->
+    <!-- 3. Trang chỉnh sửa | /danh-muc/chinh-sua/:id"-->
+    <!-- Quản lí đơn hàng -->
+    <!-- 1. Trang danh sách  "/don-hang/danh-sach" -->
+    <!-- 2. Trang chi tiết | /don-hang/chi-tiet/:id" -->
+    <!-- 3. Trang chỉnh sửa | /don-hang/chinh-sua/:id" -->
+    <script>
+        var app = angular.module('myApp', ['ngRoute']);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/list-product", {
+                    templateUrl: "product/list.html",
+                    controller: "listProductCtrl"
+                }).when("/create-product", {
+                    templateUrl: "product/create.html",
+                    controller: "createProductCtrl"
+                }).when("/detail-product/:id", {
+                    templateUrl: "product/detail.html",
+                    controller: "detailProductCtrl"
+                }).when("/edit-product/:id", {
+                    templateUrl: "product/edit.html",
+                    controller: "editProductCtrl"
+                }).when("/list-category", {
+                    templateUrl: "category/list.html",
+                    controller: "listCategoryCtrl"
+                }).when("/create-category", {
+                    templateUrl: "category/create.html",
+                    controller: "createCategoryCtrl"
+                }).when("/edit-category/:id", {
+                    templateUrl: "category/edit.html",
+                    controller: "editCategoryCtrl"
+                }).when("/list-order", {
+                    templateUrl: "order/list.html",
+                    controller: "listOrderCtrl"
+                }).when("/detail-order/:id", {
+                    templateUrl: "order/detail.html",
+                    controller: "detailOrderCtrl"
+                }).when("/edit-order/:id", {
+                    templateUrl: "order/edit.html",
+                    controller: "editOrderCtrl"
+                })
+        })
+    </script>
+
+    <script src="product/list.js"></script>
+    <script src="product/create.js"></script>
+    <script src="product/detail.js"></script>
+    <script src="product/edit.js"></script>
+    <script src="category/list.js"></script>
+    <script src="category/create.js"></script>
+    <script src="category/edit.js"></script>
+    <script src="order/list.js"></script>
+    <script src="order/detail.js"></script>
+    <script src="order/edit.js"></script>
+    
+</head>
+
+<body ng-app="myApp">
+
+    <!-- Khu vực header -->
+    <!-- Sử dụng navbar của bootstrap -->
+    <!-- Lưu ý: Dùng class navbar-dark để đổi màu chữ khi dùng nền màu tối -->
+    <nav class="navbar navbar-expand-sm bg-light shadow">
+
+        <div class="container-fluid">
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="" href="#">
+                        <img style="height: 50px;" src="../img/logo_bootstrap.webp" alt="">
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Xin chào "admin"</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Đăng xuất</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+
+    <!-- Khu vực nội dung -->
+    <div class="d-flex">
+
+        <!-- 1. Bên trái: Menu -->
+        <div class="bg-light" style="width: 300px; height: calc(100vh - 66px);">
+
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#!list-product">List sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!create-product">Create sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!detail-product/SP01">Detail sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!edit-product/SP02">Edit sản phẩm</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#!list-category">List danh mục</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!create-category">Create danh mục</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!edit-category/DM01">Edit danh mục</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#!list-order">List đơn hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!detail-order/DH01">Detail đơn hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!edit-order/DH02">Edit đơn hàng</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- 2. Bên phải: Nội dung chính -->
+        <div class="" style="width: calc(100% - 300px);">
+
+            <div class="container mt-3">
+                <div ng-view></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

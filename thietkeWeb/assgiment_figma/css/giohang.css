@@ -1,0 +1,73 @@
+.sanpham{
+    width: 80%;
+    margin: auto;
+}
+
+.sanpham__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sanpham__header a{
+    text-decoration: none;
+}
+
+.sanpham__header h2{
+    text-align: left;
+}
+
+.sanpham__content {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.sanpham__img img{
+    padding: 20px 0;
+    /* border: 1px solid black; */
+    width: 50%;
+}
+
+.sanpham__dongia p{
+    padding: 80px 0;
+}
+
+.sanpham__soluong button{
+    display: block;
+    margin: 80px 0;
+    width: 200px;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+    position: relative;
+}
+
+.sanpham__soluong .btn2{
+    margin-top: 150px;
+}
+
+.sanpham__soluong .btn3{
+    margin-top: 150px;
+}
+
+.sanpham__soluong .btn4{
+    margin-top: 150px;
+}
+
+.sanpham__soluong button i:first-of-type{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.sanpham__soluong button i:last-of-type{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.sanpham__thanhtien p{
+    padding: 80px 0;
+}

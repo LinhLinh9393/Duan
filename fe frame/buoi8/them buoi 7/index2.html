@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="myApp">
+        <div ng-controller="myController">
+            <!-- A: <input type="text" ng-model="soA"><br>
+            B: <input type="text" ng-model="soB"><br>
+            <button ng-click="tinh()">Tính A + B</button> -->
+
+            Tên: <input type="text" ng-model="$root.user.name"><br><br>
+            Tuổi <input type="text" ng-model="$root.user.age"><br><br>
+            Địa chỉ: <input type="text" ng-model="$root.user.address"><br><br>
+            <button ng-show="$root.indexUpdate == -1" ng-click="submit()">Nhập</button>
+            <button ng-show="$root.indexUpdate >= 0" ng-click="confirmUpdate()">Sửa</button>
+        </div><hr>
+        <div ng-controller="myController1">
+            <!-- <p>Kết quả: <span> {{ $root.ketQua }}</span></p> -->
+            <table border="1" style="width: 70%; text-align: center;">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên</th>
+                        <th>Tuổi</th>
+                        <th>Địa chỉ</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(index, value) in $root.listUser">
+                        <td>{{ index+1 }}</td>
+                        <td>{{ value.name }}</td>
+                        <td>{{ value.age }}</td>
+                        <td>{{ value.address }}</td>
+                        <th>
+                            <button ng-click="update(index)">Sửa</button>
+                            <button ng-click="delete(index)">Xoá</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+    <script src="../lib/angular.min.js"></script>
+    <script src="index2.js"></script>
+</body>
+</html>

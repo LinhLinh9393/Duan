@@ -1,0 +1,78 @@
+{
+  "user": [
+    {
+      "id": "KH01",
+      "email": "thanhnttph43622@fpt.edu.vn",
+      "tenDangNhap": "ngthththanh",
+      "hoTen": "Thanh",
+      "password": "123456",
+      "confirmpassword": "123456",
+      "soDienThoai": "0987654321",
+      "diaChi": "Ninh Bình",
+      "role": "1"
+    }
+  ],
+  "danh-muc": [
+    {
+      "id": "DM01",
+      "ten": "Áo Khoác Nam"
+    },
+    {
+      "id": "DM02",
+      "ten": "Áo Blazer Nam"
+    },
+    {
+      "id": "DM03",
+      "ten": "Áo Thun Nam"
+    }
+  ],
+  "san-pham": [
+    {
+      "id": "SP03",
+      "ten": "Áo Khoác Chần Bông Nam Sát Nách Khóa Kéo Form Regular - 10F23JAC025",
+      "anh": "/img/san-pham_ao-khoac-03.webp",
+      "giaBan": 800000,
+      "giaNiemYet": 2081000,
+      "moTa": "dfghj",
+      "tenDanhMuc": "Áo Khoác Nam",
+      "idDanhMuc": "DM01"
+    },
+    {
+      "id": "SP04",
+      "ten": "Áo Khoác Bomber Nam Kaki Khóa Kéo Gập Ly Form Regular - 10F23JAC009",
+      "anh": "/img/san-pham_ao-khoac-04.webp",
+      "giaBan": 1181000,
+      "giaNiemYet": 2081000,
+      "moTa": "dfghj",
+      "tenDanhMuc": "Áo Khoác Nam",
+      "idDanhMuc": "DM01"
+    },
+    {
+      "id": "SP05",
+      "ten": "Áo Khoác Bomber Nam Da Lộn Trơn Dây Kéo Form Regular - 10F23JAC001",
+      "anh": "/img/san-pham_ao-khoac-05.webp",
+      "giaBan": 1100000,
+      "giaNiemYet": 2081000,
+      "moTa": "dfghj",
+      "tenDanhMuc": "Áo Khoác Nam",
+      "idDanhMuc": "DM01"
+    },
+    {
+      "id": "SP06",
+      "ten": "Áo Khoác Nam Flannel Tay Dài Khóa Kéo Kẻ Caro Form Regular - 10F23JAC002",
+      "anh": "/img/san-pham_ao-khoac-06.webp",
+      "giaBan": 1200000,
+      "giaNiemYet": 2081000,
+      "moTa": "dfghj",
+      "tenDanhMuc": "Áo Khoác Nam",
+      "idDanhMuc": "DM01"
+    }
+  ],
+  "gio-hang": [
+    {
+      "id": "DH01",
+      "idUser": "KH01",
+      "idSanPham": "SP01"
+    }
+  ]
+}

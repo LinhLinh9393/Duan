@@ -1,0 +1,55 @@
+<a href="#!/add-user"><button class="btn btn-primary mt-3 ms-2 ">Thêm mới</button></a>
+<div class="nav justify-content-end me-4">
+  <input type="text" placeholder="Tên" ng-model="username">
+  <input type="text" placeholder="Email" ng-model="email">
+</div>
+
+<table class="table border mt-3 " style="height: 70vh; ">
+    <thead>
+      <tr>
+        <th >STT</th>
+        <th >Tên </th>
+        <th >Email</th>
+        <th >Pass</th>
+        <th >Vai trò</th>
+        <th>Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(index, value) in listUser
+      | filter:{
+        username: username,
+        email: email
+      }">
+        <th scope="row">{{index +1}}</th>
+        <td>{{value.username}}</td>
+        <td>{{value.email}}</td>
+        <td>{{value.password}}</td>
+        <td> {{ value.role}}</td>
+        <th>
+          <a href="#!/update-user/{{ value.id }}"><button class="btn btn-warning "  ng-click="update( value.id )">Sửa</button></a>
+           <button class="btn btn-danger  " ng-click="delete(value.id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Xoá</button>
+        </th>
+      </tr> 
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Cảnh báo</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Bạn có muốn xoá không?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" ng-click="confirmDelete()">Xoá</button>
+        </div>
+    </div>
+</div>
+</div>

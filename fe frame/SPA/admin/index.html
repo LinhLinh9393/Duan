@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+</head>
+<body ng-app="myApp">
+    <div ng-include="'layouts/_header.html'"></div>
+    <div ng-include="'layouts/_sitebar.html'"></div>
+    <h1> Xin chào: <span>{{ nameAccount }}</span></h1>
+    <div ng-view></div>
+
+    <div class="mt-3" ng-include="'layouts/_footer.html'"></div>
+
+
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script src="../lib/all.min.js"></script>
+    <script src="../lib/bootstrap.bundle.min.js"></script>
+    <script src="controllers/ListProductController.js"></script>
+    <script src="controllers/AddProductController.js"></script>
+    <script src="controllers/UpdateProductController.js"></script>
+    
+    <script>
+        var myApp=angular.module("myApp", ['ngRoute'])
+        myApp.config(function($routeProvider){
+            $routeProvider
+                .when("/list-product",{
+                    templateUrl: "views/list-product.html",
+                    controller: ListProductController 
+                })
+                .when("/add-product",{
+                    templateUrl: "views/add-product.html",
+                    controller : AddProductController
+                })
+                .when("/update-product/:id",{
+                    templateUrl: "views/update-product.html",
+                    controller : UpdateProductController
+                })
+                .otherwise({
+                    redirectTo: "/list-product"
+                })
+        })
+
+        function checkLogin(){
+            if(localStorage.getItem("name") == undefined)
+                window.location.href = "../login.html"
+        }
+        checkLogin()
+    </script>
+    <script src="controllers/HeaderController.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- 1. Tiêu đề trang -->
+<h3 class="text-center">Trang xem chi tiết</h3>
+<form action="">
+     <div class="m-3">
+          <label for="" class="form-label ">ID</label>
+          <input type="text" class="form-control" ng-model="product.id" disabled >
+     </div>
+     <div class="m-3">
+          <label for="" class="form-label ">Name</label>
+          <input type="text" class="form-control" ng-model="product.ten" disabled >
+     </div>
+     <div class="m-3">
+          <label for="" class="form-label ">Ảnh</label>
+          <input type="text" class="form-control" ng-model="product.anh" disabled >
+     </div>
+     <div class="m-3">
+          <label for="" class="form-label ">Danh mục</label>
+          <select name="" id="" class="form-control" ng-model="product.tenDanhMuc" disabled >
+               <option value="01">Danh mục 01</option>
+               <option value="02">Danh mục 02</option>
+          </select>
+     </div>
+     <div class="mt-3 text-center">
+          <a href="#!list-product" type="submit" class="btn btn-secondary">Quay lai</a>
+          <a href="#!edit-product/{{ product.id }}" type="submit" class="btn btn-warning">Chỉnh sửa</a>
+          <a href="#!"  type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalXacNhanXoa">Xóa</a>
+     </div>
+</form>
+<!--  -->
+<!-- Button to Open the Modal -->
+
+   
+   <!-- The Modal -->
+   <div class="modal" id="modalXacNhanXoa">
+     <div class="modal-dialog">
+       <div class="modal-content">
+   
+         <!-- Modal Header -->
+         <div class="modal-header">
+           <h4 class="modal-title">Xác nhận xóa</h4>
+           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+         </div>
+   
+         <!-- Modal body -->
+         <div class="modal-body">
+          Bạn có chắc chắn xóa không?
+         </div>
+   
+         <!-- Modal footer -->
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+           <button type="button" class="btn btn-danger" ng-click="onClickXacNhanXoa()">Xác nhận xóa</button>
+         </div>
+       </div>
+     </div>
+   </div>

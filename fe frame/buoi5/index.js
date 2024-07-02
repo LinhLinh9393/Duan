@@ -1,0 +1,36 @@
+var myApp=angular.module("myApp",[])
+myApp.controller("myController", $scope =>{
+    $scope.listProduct= [
+        {
+            id: 1,
+            name: "Iphone",
+            price: 200000000,
+            des: "Sản phẩm tốt nhất mọi thời đại",
+            image: "data:image/jpeg;base64,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"
+        },
+        {
+            id: 2,
+            name: "Iphone 14",
+            price: 300000000,
+            des: "Sản phẩm tốt nhất mọi thời đại",
+            image: "../img/tải xuống.jpg"
+        },
+        {
+            id: 3,
+            name: "Iphone 15",
+            price: 400000000,
+            des: "Sản phẩm tốt nhất mọi thời đại",
+            image: "../img/tải xuống.jpg"
+        }
+    ]
+    $scope.openDetail=function(id){
+        // console.log(id);
+        $scope.listProduct.forEach(value => {
+            $scope.product=undefined
+            if(value.id== id){
+                $scope.product = value
+            }
+        })
+        // console.log(product);
+    }
+})

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Trang chủ</title>
+     <link rel="stylesheet" href="./lib/bootstrap.min.css">
+     <script src="./lib/bootstrap.bundle.min.js"></script>
+     <script src="./lib/font-fontawesome-ae333ffef2.js"></script>
+</head>
+
+<body>
+     <nav class="navbar navbar-expand-sm bg-success navbar-dark ">
+          <div class="container">
+               <ul class="navbar-nav">
+                    <li class="nav-item">
+                         <a class="nav-link" href="./list.html">Trang danh sách</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="./add.html">Trang tạo mới</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="./update.html">Trang chi tiết</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="#">Trang chỉnh sửa</a>
+                    </li>
+               </ul>
+          </div>
+     </nav>
+     <div class="container d-flex justify-content-end">
+          <button type="button" class="btn btn-success"><i class="fa-solid fa-plus"></i> Tạo mới</button>
+     </div>
+     <div class="container">
+          <table class="table table-bordered  table-striped">
+               <thead>
+                    <tr>
+                         <th>ID</th>
+                         <th>Họ tên</th>
+                         <th>Năm sinh</th>
+                         <th>Chuyên ngành</th>
+                         <th>Tương tác</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                         <td>PH001</td>
+                         <td>Nguyễn Văn A</td>
+                         <td>2004</td>
+                         <td>Phát triển phần mềm</td>
+                         <td style="width: 1px;" class="text-nowrap">
+                              <div class="d-grid gap-2 d-md-block">
+                                   <button class="btn btn-primary sm" type="button"> <i class="fa-solid fa-eye"></i>
+                                        Xem</button>
+                                   <button class="btn btn-warning sm" type="button"><i
+                                             class="fa-solid fa-pen-to-square"></i> Sửa</button>
+                                   <button class="btn btn-danger sm" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#myModal"> <i class="fa-solid fa-trash"></i>
+                                        Xóa</button>
+                              </div>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td>PH001</td>
+                         <td>Nguyễn Văn B</td>
+                         <td>2005</td>
+                         <td>Ứng dụng phần mềm</td>
+                         <td style="width: 1px;" class="text-nowrap">
+                              <div class="d-grid gap-2 d-md-block">
+                                   <button class="btn btn-primary sm" type="button"> <i class="fa-solid fa-eye"></i>
+                                        Xem</button>
+                                   <button class="btn btn-warning sm" type="button"><i
+                                             class="fa-solid fa-pen-to-square"></i> Sửa</button>
+                                   <button class="btn btn-danger sm" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#myModal"> <i class="fa-solid fa-trash"></i>
+                                        Xóa</button>
+                              </div>
+                         </td>
+                    </tr>
+                    <tr>
+                         <td>PH001</td>
+                         <td>Nguyễn Văn C</td>
+                         <td>2005</td>
+                         <td>Ứng dụng phần mềm</td>
+                         <td style="width: 1px;" class="text-nowrap">
+                              <div class="d-grid gap-2 d-md-block">
+                                   <button class="btn btn-primary sm" type="button"> <i class="fa-solid fa-eye"></i>
+                                        Xem</button>
+                                   <button class="btn btn-warning sm" type="button"><i
+                                             class="fa-solid fa-pen-to-square"></i> Sửa</button>
+                                   <button class="btn btn-danger sm" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#myModal"> <i class="fa-solid fa-trash"></i>
+                                        Xóa</button>
+                              </div>
+                         </td>
+                    </tr>
+
+               </tbody>
+          </table>
+     </div>
+     <div class="modal" id="myModal">
+          <div class="modal-dialog">
+               <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                         <h4 class="modal-title">Xác nhận xóa</h4>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                         Bạn có chắn chắn xóa không ?
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                         <button type="button" class="btn btn-danger">Xóa</button>
+                    </div>
+
+               </div>
+          </div>
+     </div>
+</body>
+
+</html>

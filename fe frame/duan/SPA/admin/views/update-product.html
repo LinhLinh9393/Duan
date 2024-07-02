@@ -1,0 +1,35 @@
+<h1 class="text-danger text-center">Sửa sản phẩm</h1>
+<div class="form p-5 mt-2">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Tên sản phẩm</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" ng-model="data.name">
+        <span class="text-danger" ng-show="validate.name">Tên sản phẩm không được để trống</span>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Ảnh sản phẩm</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" ng-model="data.image">
+        
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Giá sản phẩm</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" ng-model="data.price">
+        <span class="text-danger" ng-show="validate.price">Giá sản phẩm không được để trống</span>
+
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Mô tả</label>
+        <textarea type="text" class="form-control" id="formGroupExampleInput2" rows="3" ng-model="data.mota"></textarea>
+        <span class="text-danger" ng-show="validate.mota">Mô tả sản phẩm không được để trống</span>
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Danh mục</label>
+        <select class="form-select justify-content-end" ng-model="data.iddm">
+            <option value=""hidden>Tất cả</option>
+            <option value="{{ value.id }}" ng-repeat="(index, value) in listDM "><span>{{ value.name }}</span></option>
+        </select>
+    </div>
+    <div class="mb-3">
+       <button class="btn btn-primary " ng-click="update()">Chỉnh sửa</button> 
+       <button class="btn btn-secondary " ng-click="huy()">Huỷ</button>
+    </div>
+</div>

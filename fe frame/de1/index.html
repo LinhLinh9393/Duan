@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+</head>
+<body ng-app="myApp">
+    <div ng-view=""></div>
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script src="controller/list.js"></script>
+    <script src="controller/add.js"></script>
+    <script src="controller/deleteCon.js"></script>
+    <script src="controller/detail.js"></script>
+    <script src="controller/update.js"></script>
+
+    <script>
+        var myApp=angular.module("myApp",['ngRoute'])
+        myApp.config(function($routeProvider){
+            $routeProvider
+                .when("/list",{
+                    templateUrl: "view/list.html",
+                    controller: list
+                })
+                .when("/add",{
+                    templateUrl: "view/add.html",
+                    controller: add
+                })
+                .when("/delete/:id",{
+                    templateUrl: "view/delete.html",
+                    controller: deleteCon
+                })
+                .when("/detail/:id",{
+                    templateUrl: "view/detail.html",
+                    controller: detail
+                })
+                .when("/update/:id",{
+                    templateUrl: "view/update.html",
+                    controller: update
+                })
+                .otherwise({
+                    redirectTo: "/list"
+                })
+        })
+
+    </script>
+    
+</body>
+</html>

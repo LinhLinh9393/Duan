@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>chi tiết user</h1>
+    <div>
+        <label for="">Tên người dùng</label>
+        <input type="text" class="form-control " ng-model="data.name"  disabled>
+    </div>
+    <div>
+        <label for="">Mật khẩu</label>
+        <input type="password" class="form-control " ng-model="data.password" disabled>
+    </div>
+    <div>
+        <label for="">Email</label>
+        <input type="text" class="form-control " ng-model="data.email" disabled>
+    </div>
+    <div>
+        <label for="">Chức năng</label>
+        <select name="" id="" ng-model="data.chuc_nang" class="form-select " disabled>
+            <option value="Giám đốc">Giám đốc</option>
+            <option value="Nhân viên">Nhân viên</option>
+            <option value="Khách hàng">Khách hàng</option>
+        </select>
+    </div>
+    <div>
+        <label for="">Số điện thoại</label>
+        <input type="text" class="form-control " ng-model="data.phone" disabled>
+    </div>
+    <div class="text-center ">
+        <a class="btn btn-warning  " href="#!/update/user/{{data.id}}">Sửa</a>
+        <a class="btn btn-warning " href="#!/list-user">Quay lại</a>
+    </div>
+</div>

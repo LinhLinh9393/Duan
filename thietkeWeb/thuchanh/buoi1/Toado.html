@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .stroke{
+            border: 2px solid black
+        }
+        .cir-stroke{
+            stroke-width: 2;
+            stroke: orange;
+        }
+        .line-stroke{
+            stroke-width: 2;
+            stroke: green;
+        }
+    </style>
+</head>
+<body>
+    <svg class="stroke" width="250" height="300">
+        <circle class="cir-stroke" cx="150" cy="80" r="40" fill="blue"></circle>
+        <line class="line-stroke" x1="0" y1="0" x2="250" y2="300"></line> 
+        <rect class="line-stroke" x="30" y="220" width="90" height="60" fill="red"></rect>
+    </svg>
+
+    <canvas id="MyCanvas" class="stroke" width="250" height="300">
+        <p>Trình duyệt không hỗ trợ Canvas</p>
+
+    </canvas>
+    <script>
+        var myCanvas = document.querySelector("#MyCanvas");
+        var ctx =myCanvas.getContext("2d");
+//hình vuông
+        ctx.beginPath();
+        ctx.fillStyle="red";//màu hình vuông
+        ctx.strokeStyle="green";//viền xanh
+        ctx.lineWidth=4;//độ dày viền
+        ctx.strokeRect(30,220,90,60);//vẽ hình 
+        ctx.fillRect(30,220,90,60);//vẽ viền viền
+        ctx.closePath();
+//đường chéo
+        ctx.beginPath();
+        ctx.moveTo(0,0);//Bắt đầu từ toạ độ (0,0)
+        ctx.lineTo(250,300);//chiều cao và độ dài trùng với width và height
+        ctx.lineWidth=2;
+        ctx.stroke();
+        ctx.closePath()
+//hình tròn
+        ctx.beginPath();
+        ctx.fillStyle="blue";
+        ctx.strokeStyle="orange";
+        ctx.lineWidth=4;
+        ctx.arc(150,80,40,0,2*Math.PI);//Tạo hình tròn
+        ctx.stroke();//vẽ hình tròn
+        ctx.fill();//vẽ viền
+        ctx.closePath();
+
+    </script>
+</body>
+</html>

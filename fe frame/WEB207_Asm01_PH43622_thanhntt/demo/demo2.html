@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Trang chủ</title>
+     <link rel="stylesheet" href="/lib/bootstrap.min.css" />
+     <link rel="stylesheet" href="/lib/style.css">
+     <script src="/lib/bootstrap.bundle.min.js"></script>
+     <script src="/lib/font-fontawesome-ae333ffef2.js"></script>
+     <script src="/lib/angular.min.js"></script>
+     <script src="/lib/angular-route.js"></script>
+</head>
+
+<body ng-app="myApp">
+     <div class="container">
+
+          <div class="border rounded bg-body-secondary" ng-controller="registerCtrl">
+
+               <form action="">
+                    <div class="mb-3 mt-3">
+                         <label for="email" class="form-label">Email:</label>
+                         <input type="email" class="form-control" id="email" placeholder="Nhập email" name="email"
+                              ng-model="data.email">
+                    </div>
+                    <div class="mb-3 mt-3">
+                         <label for="username" class="form-label">Tên đăng nhâp:</label>
+                         <input type="text" class="form-control" id="username" placeholder="Nhập tên đăng nhập"
+                              name="user" ng-model="data.tenDangNhap">
+                    </div>
+                 
+                    <div class="mb-3">
+                         <label for="pwd" class="form-label">Mật khẩu:</label>
+                         <input type="password" class="form-control" id="pwd" placeholder="Nhập mật khẩu" name="pswd"
+                              ng-model="data.password">
+                    </div>
+                
+                    <a type="button" class="btn btn-primary m-2" ng-click="formDangKi()">Đăng kí</a>
+                    <div class="alert alert-danger m-3" ng-if="formValidate.trangThai === false">
+                         <strong>Form không hợp lệ!</strong><br> {{ formValidate.noiDung }}
+                    </div>
+               </form>
+          </div>
+     </div>
+     <script>
+          var myApp = angular.module('myApp', []);
+          myApp.controller("registerCtrl", function ($scope, $http) {
+               var api = "http://localhost:3000/user/"
+               $scope.data = {
+                    email: "",
+                    tenDangNhap: "",
+                    password: "",
+                    role :"2"
+               }
+               $scope.formDangKi = function(){
+                    $http.post(api, $scope.data)
+                    .then(function(response){
+                         window.location.href = "demo.html";
+                         alert("Thành công")
+                    })
+               }
+          })
+     </script>
+</body>
+
+</html>

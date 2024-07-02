@@ -1,0 +1,34 @@
+{
+  "post": [
+    {
+      "userId": "1",
+      "id": "1",
+      "title": "Hello",
+      "body": "Body Hello"
+    },
+    {
+      "userId": "1",
+      "id": "2",
+      "title": "Hello 2",
+      "body": "Body Hello 2"
+    },
+    {
+      "id": "efe8",
+      "userId": "2",
+      "title": "123",
+      "body": "ỷytndtu"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Linh",
+      "email": "Linhlinh@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "LinhLinh",
+      "email": "Linhlinh@gmail.com"
+    }
+  ]
+}

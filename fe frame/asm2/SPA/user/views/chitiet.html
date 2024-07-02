@@ -1,0 +1,60 @@
+<!-- <h1>{{title}}</h1> -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Chi tiết</a></li>
+  </ol>
+</nav>
+<div class="row p-3 " >
+          <div class="col-5">
+          <img src="{{ list.image }}" alt="" srcset="" width="100%">
+      </div>
+      <div class="col-7 mt-3 " >
+          <h2 ><span>{{ list.name }}</span></h2>
+          <div class="row">
+            <div class="col-6" ng-model="data.iddm">Mã sản phẩm: <span>{{ list.id }}</span></div>
+            <div class="col-6">Xuất xứ: {{ list.xuatxu }}</div>
+          </div>
+          <p>Đánh giá: 
+            <i class="fa-solid fa-star text-warning "></i>
+            <i class="fa-solid fa-star text-warning "></i>
+            <i class="fa-solid fa-star text-warning "></i>
+            <i class="fa-solid fa-star text-warning "></i>
+            <i class="fa-solid fa-star text-warning "></i>
+          </p>
+          <div class="row">
+            <div class="col-3"><h4 class="text-decoration-line-through">3,000,000 vnđ</h4></div>
+            <div class="col-4"><h2 class="text text-danger">{{ list.price | currency: '':0}} vnđ</h2></div>
+            <div class="col-5"><p class="bg-danger text-light badge ms-3 ">Giảm giá 25%</p></div>
+          </div>
+          <div class="row">
+            <p>Năm phát hành: 2022</p>
+            <p>Giới tính: Nữ</p>
+            <p>Phong cách: {{ list.phongcach}}</p>
+            <p> Mô tả: {{ list.mota }}</p>
+          </div>
+          <div class="btn p-3 ">
+            <button class="p-2 bg-black text-light " ng-click="addCart(list)">Thêm giỏ hàng</button>
+            <button class="p-2 bg-black text-light ">Mua ngay</button>
+          </div>
+      </div>
+  </div>
+  <div class="row mt-3 ">
+    <h2>Lựa chọn khác</h2>
+    <div class="row me-4">
+        <div class="col-xl-4  p-3 col-sm-6 "  ng-repeat="(index, value) in listSP">
+          <div class="card">
+            <img src="{{ value.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <div class="text d-flex ">
+                <h5 class="card-title text-danger"><span>{{ value.name }}</span></h5>
+              </div>
+              <p class="card-text"><span>{{ value.mota }}</span></p>
+              <p class="text text-danger text-center " style="font-family: fantasy; font-size: 25px;"><span>{{ value.price | currency: '':0 }} vnđ</span></p>
+              <a href="#!/chitietsp/{{ value.id }}"><button class="btn btn-primary container-fluid" >Mua ngay</button></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    
